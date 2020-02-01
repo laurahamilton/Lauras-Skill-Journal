@@ -1,4 +1,5 @@
 # Blog 0 - January 31, 2020
+
 ## Using Python 3.4 + to Work with Excel Spreadsheets
 
 Excel is a popular and powerful spreadsheet application for Windows 10 (and earlier versions). The openpyxl module allows your Python programs to read and modify Excel spreadsheet files. If you have the boring task of copying certain data from one spreadsheet and pasting it into another one, you can use Python to do this for you. 
