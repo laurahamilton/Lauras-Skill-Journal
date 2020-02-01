@@ -21,7 +21,8 @@ Once you’ve imported the openpyxl module, you’ll be able to use the openpyxl
 1. import openpyxl
 2. wb = openpyxl.load_workbook('example.xlsx')
 3. type(wb)
-<class 'openpyxl.workbook.workbook.Workbook'> 
+> <class 'openpyxl.workbook.workbook.Workbook'>
+
 
 The openpyxl.load_workbook() function takes in the filename and returns a value of the workbook data type. This Workbook object represents the Excel file, a bit like how a File object represents an opened text file.
 
@@ -31,14 +32,14 @@ You can get a list of all the worksheet names in the workbook by calling the get
 1. import openpyxl
 2. wb = openpyxl.load_workbook('example.xlsx')
 3. wb.get_sheet_names()
-'Sheet1', 'Sheet2', 'Sheet3'
+> 'Sheet1', 'Sheet2', 'Sheet3'
 5. sheet = wb.get_sheet_by_name('Sheet3')
 6. sheet 
-<Worksheet "Sheet2">
+> <Worksheet "Sheet2">
 7. type(sheet) 
-<class 'openpyxl.worksheet.worksheet.Worksheet'>
+> <class 'openpyxl.worksheet.worksheet.Worksheet'>
 8. sheet.title 
-'Sheet2'
+> 'Sheet2'
 
 Each sheet is represented by a Worksheet object, which you can find by passing the sheet name string to the get_sheet_by_name() workbook method. Also, you can read the active member variable of a Workbook object to get the workbook’s active sheet. Once you have the Worksheet object, you can get its name from the title attribute.
 
@@ -49,17 +50,17 @@ Once you have a Worksheet object, you can access a Cell object by its name. Ente
 2. wb = openpyxl.load_workbook('example.xlsx')
 3. sheet = wb.get_sheet_by_name('Sheet1')
 4. sheet['A1'] 
-<Cell Sheet1.A1>
+> <Cell Sheet1.A1>
 5. sheet['A1'].value datetime.datetime(2015, 4, 5, 13, 34, 2)
 6. c = sheet['B1']
 7. c.value 
-'Apples'
+> 'Apples'
 8. 'Row ' + str(c.row) + ', Column ' + c.column + ' is ' + c.value
-'Row 1, Column B is Apples'
+> 'Row 1, Column B is Apples'
 9. 'Cell ' + c.coordinate + ' is ' + c.value
-'Cell B1 is Apples'
+> 'Cell B1 is Apples'
 10. sheet['C1'].value
-73
+> 73
 
 The Cell object has a value attribute that contains the value stored in that cell. Cell objects also have row, column, and coordinate attributes that provide location information for the cell.
 
@@ -72,21 +73,21 @@ To convert from letters to numbers, call the openpyxl.cell.column_index_from_str
 1. import openpyxl
 2. from openpyxl.cell import get_column_letter, column_index_from_string
 3. get_column_letter(1)
-'A'
+> 'A'
 4. get_column_letter(2)
-'B'
+> 'B'
 5. get_column_letter(27)
-'AA'
+> 'AA'
 6. get_column_letter(900)
-'AHP'
+> 'AHP'
 7. wb = openpyxl.load_workbook('example.xlsx')
 8. sheet = wb.get_sheet_by_name('Sheet1')
 9. get_column_letter(sheet.max_column)
-'C'
+> 'C'
 10. column_index_from_string('A')
-1
+> 1
 11. column_index_from_string('AA')
-27
+> 27
 
 The function column_index_string() does the reverse: You pass it the letter name of a column, and it tells you what number that column is. You don’t need to have a workbook loaded to use these functions.
 
@@ -98,28 +99,28 @@ You can slice Worksheet objects to get all the Cell objects in a row, column, or
 2. wb = openpyxl.load_workbook('example.xlsx')
 3. sheet = wb.get_sheet_by_name('Sheet1')
 4. tuple(sheet['A1':'C3'])
-   ((<Cell Sheet1.A1>, <Cell Sheet1.B1>, <Cell Sheet1.C1>), (<Cell Sheet1.A2>,
-   <Cell Sheet1.B2>, <Cell Sheet1.C2>), (<Cell Sheet1.A3>, <Cell Sheet1.B3>,
-   <Cell Sheet1.C3>))
+> ((<Cell Sheet1.A1>, <Cell Sheet1.B1>, <Cell Sheet1.C1>), (<Cell Sheet1.A2>,
+> <Cell Sheet1.B2>, <Cell Sheet1.C2>), (<Cell Sheet1.A3>, <Cell Sheet1.B3>,
+> <Cell Sheet1.C3>))
 5. for rowOfCellObjects in sheet['A1':'C3']:
-6.        for cellObj in rowOfCellObjects:
-7.               print(cellObj.coordinate, cellObj.value)
-8.           print('--- END OF ROW ---')
+6. for cellObj in rowOfCellObjects:
+7. print(cellObj.coordinate, cellObj.value)
+8. print('--- END OF ROW ---')
 
 Here is the result:
 
-   A1 2015-04-05 13:34:02
-   B1 Apples
-   C1 73
-   --- END OF ROW ---
-   A2 2015-04-05 03:41:23
-   B2 Cherries
-   C2 85
-   --- END OF ROW ---
-   A3 2015-04-06 12:46:51
-   B3 Pears
-   C3 14
-   --- END OF ROW ---
+> A1 2015-04-05 13:34:02
+> B1 Apples
+> C1 73
+> --- END OF ROW ---
+> A2 2015-04-05 03:41:23
+> B2 Cherries
+> C2 85
+> --- END OF ROW ---
+> A3 2015-04-06 12:46:51
+> B3 Pears
+> C3 14
+> --- END OF ROW ---
    
 First, we specify that we want the Cell objects in the rectangular area from A1 to C3, and we get a Generator object containing the Cell objects in that area. To help us visualize this Generator object, we can use tuple() on it to display its Cell objects in a tuple.
 
