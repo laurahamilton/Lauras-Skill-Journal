@@ -3,7 +3,7 @@
 
 Excel is a popular and powerful spreadsheet application for Windows 10 (and earlier versions). The openpyxl module allows your Python programs to read and modify Excel spreadsheet files. If you have the boring task of copying certain data from one spreadsheet and pasting it into another one, you can use Python to do this for you. 
 
-<p align="center"> <img width="800" height="300" src="python-excel.png"> </p>
+<p align="center"> <img width="500" height="300" src="python-excel.png"> </p>
 
 **Note: If you do not have Excel, there are alternatives to open .xlsx files that work on Windows, OS X, and Linux - LibreOffice Calc and OpenOffice Calc!**
 
