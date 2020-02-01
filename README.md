@@ -21,7 +21,7 @@ Once you’ve imported the openpyxl module, you’ll be able to use the openpyxl
 1. import openpyxl
 2. wb = openpyxl.load_workbook('example.xlsx')
 3. type(wb)
-4. <class 'openpyxl.workbook.workbook.Workbook'> 
+<class 'openpyxl.workbook.workbook.Workbook'> 
 
 The openpyxl.load_workbook() function takes in the filename and returns a value of the workbook data type. This Workbook object represents the Excel file, a bit like how a File object represents an opened text file.
 
@@ -31,11 +31,14 @@ You can get a list of all the worksheet names in the workbook by calling the get
 1. import openpyxl
 2. wb = openpyxl.load_workbook('example.xlsx')
 3. wb.get_sheet_names()
-4. 'Sheet1', 'Sheet2', 'Sheet3'
+'Sheet1', 'Sheet2', 'Sheet3'
 5. sheet = wb.get_sheet_by_name('Sheet3')
-6. sheet <Worksheet "Sheet2">
-7. type(sheet) <class 'openpyxl.worksheet.worksheet.Worksheet'>
-8. sheet.title 'Sheet2'
+6. sheet 
+<Worksheet "Sheet2">
+7. type(sheet) 
+<class 'openpyxl.worksheet.worksheet.Worksheet'>
+8. sheet.title 
+'Sheet2'
 
 Each sheet is represented by a Worksheet object, which you can find by passing the sheet name string to the get_sheet_by_name() workbook method. Also, you can read the active member variable of a Workbook object to get the workbook’s active sheet. Once you have the Worksheet object, you can get its name from the title attribute.
 
