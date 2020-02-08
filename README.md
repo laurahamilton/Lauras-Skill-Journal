@@ -2,7 +2,7 @@
 
 ## How to Install WordPress on Ubuntu 18.04 Using LAMP Stack
 
-<p align="center"> <img width="500" height="300" src="wordpress-ubuntu.png"> </p>
+<p align="center"> <img width="500" height="500" src="wordpress-ubuntu.png"> </p>
 
 In this tutorial, I will show you how to install Wordpress on Ubuntu 18.04. By using this method, you will have full control of the WordPress backend for experimentation and advanced uses. The LAMP stack will be used for your WordPress development environment on a VPS, or virtual private server, which is one of the most popular ways to host a service. 
 
