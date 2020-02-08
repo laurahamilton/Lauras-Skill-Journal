@@ -68,8 +68,6 @@ Swap the positions of index.html and index.php. Save the changes and exit the vi
 
 To test the PHP, you can create a sample PHP file sample.php and add these lines of code. This file needs to be added to the Web Root of Apache which is located at – /var/www/html/. Once this is saved, you can try to access this page by using http://Your_Public_IP/Sample.php.
 
-- <?php phpinfo();?>
-
 4. MySQL Setup for WordPress
 Now, login to MySQL as the root user:
 
@@ -94,9 +92,7 @@ Also, create a WordPress directory (or you can provide any other name at locatio
 
 The file WordPress.conf will be the Apache configuration file for this testing. In the file, you can enable .htaccess by adding these lines to the VirtualHost block:
 
-- <Directory /var/www/wordpress />
--   AllowOverride All
-- </Directory>
+<p align="center"> <img width="90" height="50" src="directory.png"> </p>
 
 Save the file. 
 
