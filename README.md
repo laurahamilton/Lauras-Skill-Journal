@@ -11,6 +11,7 @@ To refresh, LAMP atands for Linux, Apache, MySQL, and PHP. Make sure you are log
 - sudo ufw app list
 
 1. Install and Configure Apache
+
 First, install Apache web server 2. Press Y and "enter" to continue with the installation:
 
 - sudo apt update
@@ -31,6 +32,7 @@ To find your public IP address:
 You will need your public IP address to verify that Apache was installed correctly. 
 
 2. Install MySQL
+
 Now that the webserver is running, we will install the MySQL database. Press Y and "enter" to continue with the installation:
 
 - sudo apt install mysql-server
@@ -50,6 +52,7 @@ Reflect these changes using the flush command:
 Type "exit" to exit the MySQL prompt. 
 
 3. Install PHP
+
 Now we will install PHP to display dynamic content.
 
 - sudo apt install php libapache2-mod-php php-mysql
@@ -69,6 +72,7 @@ Swap the positions of index.html and index.php. Save the changes and exit the vi
 To test the PHP, you can create a sample PHP file sample.php and add these lines of code. This file needs to be added to the Web Root of Apache which is located at – /var/www/html/. Once this is saved, you can try to access this page by using http://Your_Public_IP/Sample.php.
 
 4. MySQL Setup for WordPress
+
 Now, login to MySQL as the root user:
 
 - mysql -u root -p
@@ -86,6 +90,7 @@ Create a new user for Wordpress. We will name the user "WordpressUser"; "NewPass
 Exit the MySQL prompt. 
 
 5. Prepare to Install WordPress on Ubuntu
+
 Now, create a configuration file, for example :WordPress.conf. Place it to /etc/apache2/sites-available/. This will be a replica of the default configuration file which already exists in this location.
 
 Also, create a WordPress directory (or you can provide any other name at location /var/www/). The complete location: /var/www/wordpress.
@@ -109,6 +114,7 @@ To see all changes made, restart Apache:
 - sudo systemctl restart apache2
 
 6. Configure and Install WordPress on Ubuntu
+
 Now, go to this specific directory on Wordpress and extract the file: 
 
 - curl -O https://wordpress.org/latest.tar.gz
