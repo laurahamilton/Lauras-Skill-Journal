@@ -10,86 +10,70 @@ To refresh, LAMP atands for Linux, Apache, MySQL, and PHP. Make sure you are log
 
 - sudo ufw app list
 
-1. Install and Configure Apache
+1. Install and Configure Apache:
 
 First, install Apache web server 2. Press Y and "enter" to continue with the installation:
-
 - sudo apt update
 - sudo apt install apache2
 
 Now there will be a list of available applications to choose from. We are going to select "Apache Full." To allow HTTP and HTTPS traffic (if it is not allowing it to pass through), you can execute the command below:
-
 - sudo ufw allow in "Apache Full"
 
 To confirm the installation: 
-
 - sudo ufw app info "Apache Full"
 
 To find your public IP address:
-
 - ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 
 You will need your public IP address to verify that Apache was installed correctly. 
 
-2. Install MySQL
+2. Install MySQL:
 
 Now that the webserver is running, we will install the MySQL database. Press Y and "enter" to continue with the installation:
-
 - sudo apt install mysql-server
 
 Open MySQL:
-
 - sudo mysql
 
 Set a password for the root user:
-
 - mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Password;
 
 Reflect these changes using the flush command:
-
 - mysql> FLUSH PRIVILEGES;
 
 Type "exit" to exit the MySQL prompt. 
 
-3. Install PHP
+3. Install PHP:
 
 Now we will install PHP to display dynamic content.
-
 - sudo apt install php libapache2-mod-php php-mysql
 
 Install Additional PHP extensions for WordPress using the command below:
-
 - sudo apt install php-curl php-gd php-xml php-mbstring  php-xmlrpc php-zip php-soap php-intl
 
 When you request a directory, the index.html is displayed as a default setting. In case you want to show index.php instead of index.html, you need to open the dir.conf file using the vi editor:
-
 - sudo vi /etc/apache2/mods-enabled/dir.conf
 
 Swap the positions of index.html and index.php. Save the changes and exit the vi editor. For the changes to be visible, restart the Apache server using:
-
 - sudo systemctl restart apache2
 
 To test the PHP, you can create a sample PHP file sample.php and add these lines of code. This file needs to be added to the Web Root of Apache which is located at – /var/www/html/. Once this is saved, you can try to access this page by using http://Your_Public_IP/Sample.php.
 
-4. MySQL Setup for WordPress
+4. MySQL Setup for WordPress:
 
 Now, login to MySQL as the root user:
-
 - mysql -u root -p
 
 Create a new database for Wordpress. Below we have created a new DB called WordPressDB:
-
 - mysql> CREATE DATABASE WordPressDB DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 Create a new user for Wordpress. We will name the user "WordpressUser"; "NewPasswordToBeSet" is in place of a strong password. Grant this user privilages: 
-
 - mysql> GRANT ALL ON WordPressDB.* TO ' WordPressUser '@'localhost' IDENTIFIED BY 'NewPasswordToBeSet';
-
 - mysql> FLUSH PRIVILEGES;
 
 Exit the MySQL prompt. 
 
-5. Prepare to Install WordPress on Ubuntu
+5. Prepare to Install WordPress on Ubuntu:
 
 Now, create a configuration file, for example :WordPress.conf. Place it to /etc/apache2/sites-available/. This will be a replica of the default configuration file which already exists in this location.
 
@@ -102,52 +86,42 @@ The file WordPress.conf will be the Apache configuration file for this testing. 
 Save the file. 
 
 Enable mod_rewrite:
-
 -sudo a2enmod rewrite
 
 In the file /etc/apache2/apache2.conf, you can change the ServerName directive by providing the server’s IP or hostname.
-
 - sudo apache2ctl configtest
 
 To see all changes made, restart Apache: 
-
 - sudo systemctl restart apache2
 
 6. Configure and Install WordPress on Ubuntu
 
 Now, go to this specific directory on Wordpress and extract the file: 
-
 - curl -O https://wordpress.org/latest.tar.gz
 - tar xzvf latest.tar.gz
 
 Create a .htaccess file and save the file. Rename the wp-config-sample.php file.
-
 - vi /tmp/wordpress/.htaccess
 - mv /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
 - mkdir /tmp/wordpress/wp-content/upgrade
 - sudo cp -a /tmp/wordpress/. /var/www/wordpress
 
 To ensure that everything works correctly, change the ownership of the WordPress files to the www-data users and groups. Those are the users that Apache web server will use.
-
 - sudo chown -R www-data:www-data /var/www/wordpress
 
 Set the correct permissions: 
-
 - sudo find /var/www/wordpress/ -type d -exec chmod 750 {} \;
 - sudo find /var/www/wordpress/ -type f -exec chmod 640 {} \;
 
 Add the Wordpress salt to be generated: 
-
 - curl -s https://api.wordpress.org/secret-key/1.1/salt/
 
 Add this to the wp-config.php file: 
-
 - vi /var/www/wordpress/wp-config.php
 
 Replace the DB_NAME, DB_USER, DB_PASSWORD with values you have created for WordPress. Save the file after making the changes.
 
 Also, you can add the file system method at the very bottom: 
-
 - define('FS_METHOD', 'direct');
 
 Save the file. This completes the backend setup. You can access WordPress via the interface by using the URL http://IP_Address.
