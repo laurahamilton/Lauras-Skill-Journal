@@ -3,7 +3,7 @@
 ## Setting up Atom as a Python IDE
 
 
-<p align="center"> <img width="500" height="300" src="atom-python.png"> </p>
+<p align="center"> <img width="700" height="300" src="atom-python.png"> </p>
 
 You can setup and maintain a python friendly development environment using Atom.  Developers typically want to reduce the amount of application switching as much as possible and create repeatable workflows. Atom was developed initially from with Github, making it open-source and extensible by nature. It has a strong community that provides support and additional plugin functionality.
 
