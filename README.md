@@ -245,8 +245,11 @@ Also, create a WordPress directory (or you can provide any other name at locatio
 
 The file WordPress.conf will be the Apache configuration file for this testing. In the file, you can enable .htaccess by adding these lines to the VirtualHost block:
 
-<p align="center"> <img width="200" height="100" src="directory.JPG"> </p>
-
+```
+<Directory /var/www/wordpress />
+AllowOverride All
+</Directory>
+```
 Save the file. 
 
 Enable mod_rewrite:
