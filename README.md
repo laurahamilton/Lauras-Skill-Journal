@@ -11,15 +11,15 @@ You can setup and maintain a python friendly development environment using Atom.
 
 1. First, download and install Atom. https://flight-manual.atom.io/getting-started/sections/why-atom/
 
-- You can use Atom's UI to install the plug-ins listed below using Atom's Settings View: just type ctrl + (on Linux or a PC), and cmd + (on a Mac). 
+You can use Atom's UI to install the plug-ins listed below using Atom's Settings View: just type ctrl + (on Linux or a PC), and cmd + (on a Mac). 
 
-- You can also go to the "Settings View," you can click on the "Install" tab, and type the package name you want to install into the "Search Packages" search box.
+You can also go to the "Settings View," you can click on the "Install" tab, and type the package name you want to install into the "Search Packages" search box.
 
 2. Download a Linter Package (Source Code Checker)
 
-- Linter is a base linter provider for the Atom Editor. You will install a specific linter for your language. Here is a link to a full list of Linter Packages: atomlinter.github.io. or https://atom.io/packages/linter.
+Linter is a base linter provider for the Atom Editor. You will install a specific linter for your language. Here is a link to a full list of Linter Packages: atomlinter.github.io. or https://atom.io/packages/linter.
 
-- Linters provide a top-level application programming interface to its user so that they can visualize errors and other types of messages with ease.
+Linters provide a top-level application programming interface to its user so that they can visualize errors and other types of messages with ease.
 
 So, on the command line: `apm install linter`
 
