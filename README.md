@@ -2,12 +2,13 @@
 
 ## Setting up Atom as a Python IDE
 
-
 <p align="center"> <img width="700" height="300" src="atom-python.png"> </p>
 
 You can setup and maintain a python friendly development environment using Atom.  Developers typically want to reduce the amount of application switching as much as possible and create repeatable workflows. Atom was developed initially from with Github, making it open-source and extensible by nature. It has a strong community that provides support and additional plugin functionality.
 
 **Note: I have Atom 1.40 installed and primarily use Python 3+ with it.**
+
+<p align="center"> <img width="700" height="300" src="installing-atom.png"> </p>
 
 1. First, download and install Atom. https://flight-manual.atom.io/getting-started/sections/why-atom/
 
@@ -16,6 +17,8 @@ You can use Atom's UI to install the plug-ins listed below using Atom's Settings
 You can also go to the "Settings View," you can click on the "Install" tab, and type the package name you want to install into the "Search Packages" search box.
 
 2. Download a Linter Package (Source Code Checker)
+
+<p align="center"> <img width="700" height="300" src="linter.gif"> </p>
 
 Linter is a base linter provider for the Atom Editor. You will install a specific linter for your language. Here is a link to a full list of Linter Packages: atomlinter.github.io. or https://atom.io/packages/linter.
 
@@ -29,8 +32,8 @@ Then, download a language specific linter plugin. (I will be using flake8)
 pip install flake8
 apm install linter-flake8
 ```
-3. Download a Python AutoComplete Package and AutoFormatter
 
+3. Download a Python AutoComplete Package and AutoFormatter
 
 <p align="center"> <img width="500" height="300" src="How-to-Setup-Atom-IDE-For-Python.jpg"> </p>
 
@@ -49,6 +52,8 @@ apm install python-autopep8
 
 4. Download a Script Package
 
+<p align="center"> <img width="700" height="300" src="atom-script.png"> </p>
+
 Run scripts based on the file name, a selection of code, or by the line number. This is VERY handy for testing your code from within Atom instead of going to a different terminal window. It is powerful because it is selection-based, which means you can run snippets instead of whole files.
 
 ```
@@ -56,6 +61,8 @@ apm install script
 ```
 
 5. Download a File-Icons Package
+
+<p align="center"> <img width="700" height="300" src="file-icons.png"> </p>
 
 File-icon packages are similar to the vs code-icons pack for Visual Studio Code (https://github.com/vscode-icons/vscode-icons) and built off of the logo-file-icons pack (https://atom.io/packages/logo-file-icons) with tweaks and additions.  
 
@@ -65,6 +72,8 @@ apm install atom-file-icons
 
 6. Download a Syntax Highlighting Theme
 
+<p align="center"> <img width="700" height="300" src="atom-material-syntax.png"> </p>
+
 This is a common syntax theme for Atom Material UI. Inspired by Mattia Astorino's SublimeText theme.
 
 ```
@@ -72,6 +81,9 @@ apm install atom-material-syntax
 ```
 
 7. Download and Install Minimap
+
+<p align="center"> <img width="700" height="300" src="atom-minimap.png"> </p>
+
 
 The Minimap package displays a Minimap preview of your file on the right hand side of your editor. The following plug-ins are also helpful: 
 
@@ -85,6 +97,8 @@ apm install minimap-highlight-selected
 ```
 
 8. Install the Hydrogen Package
+
+<p align="center"> <img width="700" height="300" src="atom-hydrogen.png"> </p>
 
 Hydrogen runs code interactively, allows you to inspect data, and plot. It has all the power of Jupyter kernels inside Atom. It supports Python, R, JavaScript and other Jupyter kernels.
 
