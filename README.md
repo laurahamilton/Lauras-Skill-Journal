@@ -10,13 +10,13 @@ You can setup and maintain a python friendly development environment using Atom.
 
 <p align="center"> <img width="400" height="300" src="installing-atom.png"> </p>
 
-1. First, download and install Atom. https://flight-manual.atom.io/getting-started/sections/why-atom/
+- First, download and install Atom. https://flight-manual.atom.io/getting-started/sections/why-atom/
 
 You can use Atom's UI to install the plug-ins listed below using Atom's Settings View: just type ctrl + (on Linux or a PC), and cmd + (on a Mac). 
 
 You can also go to the "Settings View," you can click on the "Install" tab, and type the package name you want to install into the "Search Packages" search box.
 
-2. Download a Linter Package (Source Code Checker)
+- Download a Linter Package (Source Code Checker)
 
 <p align="center"> <img width="500" height="300" src="linter.gif"> </p>
 
@@ -33,7 +33,7 @@ pip install flake8
 apm install linter-flake8
 ```
 
-3. Download a Python AutoComplete Package and AutoFormatter
+- Download a Python AutoComplete Package and AutoFormatter
 
 <p align="center"> <img width="500" height="300" src="How-to-Setup-Atom-IDE-For-Python.jpg"> </p>
 
@@ -50,7 +50,7 @@ pip install autopep8
 apm install python-autopep8
 ```
 
-4. Download a Script Package
+- Download a Script Package
 
 <p align="center"> <img width="500" height="300" src="atom-script.png"> </p>
 
@@ -60,7 +60,7 @@ Run scripts based on the file name, a selection of code, or by the line number. 
 apm install script
 ```
 
-5. Download a File-Icons Package
+- Download a File-Icons Package
 
 <p align="center"> <img width="500" height="400" src="file-icons.png"> </p>
 
@@ -70,7 +70,7 @@ File-icon packages are similar to the vs code-icons pack for Visual Studio Code 
 apm install atom-file-icons
 ```
 
-6. Download a Syntax Highlighting Theme
+- Download a Syntax Highlighting Theme
 
 <p align="center"> <img width="500" height="300" src="atom-material-syntax.png"> </p>
 
@@ -80,7 +80,7 @@ This is a common syntax theme for Atom Material UI. Inspired by Mattia Astorino'
 apm install atom-material-syntax
 ```
 
-7. Download and Install Minimap
+- Download and Install Minimap
 
 <p align="center"> <img width="500" height="300" src="atom-minimap.png"> </p>
 
@@ -96,7 +96,7 @@ apm install minimap-git-diff
 apm install minimap-highlight-selected 
 ```
 
-8. Install the Hydrogen Package
+- Install the Hydrogen Package
 
 <p align="center"> <img width="300" height="300" src="atom-hydrogen.png"> </p>
 
@@ -108,7 +108,7 @@ This post details what can be done with Hydrogen: https://nteract.gitbooks.io/hy
 apm install hydrogen
 ```
 
-9. Using Version Control (or Cloud Drives) for Configuration Portability
+- Using Version Control (or Cloud Drives) for Configuration Portability
 
 Use version control for your Atom config file. You can find them, then host and clone your Git repository on Github, gitlab, Bitbucket, etc., and retrieve it on other computers simply by running:
 
@@ -144,7 +144,7 @@ You can check by running the command:
 sudo ufw app list
 ```
 
-1. Install and Configure Apache:
+- Install and Configure Apache:
 
 First, install Apache web server 2. Press Y and "enter" to continue with the installation:
 ```
@@ -169,7 +169,7 @@ ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 
 You will need your public IP address to verify that Apache was installed correctly. 
 
-2. Install MySQL:
+- Install MySQL:
 
 Now that the webserver is running, we will install the MySQL database. Press Y and "enter" to continue with the installation:
 ```
@@ -193,7 +193,7 @@ mysql> FLUSH PRIVILEGES;
 
 Type "exit" to exit the MySQL prompt. 
 
-3. Install PHP:
+- Install PHP:
 
 Now we will install PHP to display dynamic content.
 ```
@@ -217,7 +217,7 @@ sudo systemctl restart apache2
 
 To test the PHP, you can create a sample PHP file sample.php and add these lines of code. This file needs to be added to the Web Root of Apache which is located at – /var/www/html/. Once this is saved, you can try to access this page by using http://Your_Public_IP/Sample.php.
 
-4. MySQL Setup for WordPress:
+- MySQL Setup for WordPress:
 
 Now, login to MySQL as the root user:
 ```
@@ -237,7 +237,7 @@ mysql> FLUSH PRIVILEGES;
 
 Exit the MySQL prompt. 
 
-5. Prepare to Install WordPress on Ubuntu:
+- Prepare to Install WordPress on Ubuntu:
 
 Now, create a configuration file, for example :WordPress.conf. Place it to /etc/apache2/sites-available/. This will be a replica of the default configuration file which already exists in this location.
 
@@ -264,7 +264,7 @@ To see all changes made, restart Apache:
 sudo systemctl restart apache2
 ```
 
-6. Configure and Install WordPress on Ubuntu
+- Configure and Install WordPress on Ubuntu
 
 Now, go to this specific directory on Wordpress and extract the file: 
 ```
