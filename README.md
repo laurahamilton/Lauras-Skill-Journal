@@ -131,7 +131,7 @@ apm install --packages-file ~/.atom/package.list
 
 # Blog 1 - Febuary 7, 2020
 
-## How to Install WordPress on Ubuntu 18.04 Using a LAMP Stack
+## Install WordPress on Ubuntu 18.04 Using a LAMP Stack
 
 <p align="center"> <img width="500" height="500" src="wordpress-ubuntu.png"> </p>
 
