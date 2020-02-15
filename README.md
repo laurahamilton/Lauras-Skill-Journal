@@ -12,7 +12,7 @@ You can setup and maintain a python friendly development environment using Atom.
 
 - First, download and install Atom. https://flight-manual.atom.io/getting-started/sections/why-atom/
 
-You can use Atom's UI to install the plug-ins listed below using Atom's Settings View: just type ctrl + (on Linux or a PC), and cmd + (on a Mac). 
+You can use Atom's UI to install the plug-ins listed below using Atom's Settings View: just type ctrl + (on Linux or a PC), or cmd + (on a Mac). 
 
 You can also go to the "Settings View," you can click on the "Install" tab, and type the package name you want to install into the "Search Packages" search box.
 
@@ -448,8 +448,8 @@ Here is the result:
 > --- END OF ROW ---
 ```
 
-First, we specify that we want the Cell objects in the rectangular area from A1 to C3, and we get a Generator object containing the Cell objects in that area. To help us visualize this Generator object, we can use tuple() on it to display its Cell objects in a tuple.
+First, we specify that we want the Cell objects in the rectangular area from A1 to C3, and we get a generator object containing the Cell objects in that area. Use the tuple() on it to display its cell objects in a tuple (to help visualize the generator object).
 
 This tuple contains three tuples: one for each row, from the top of the desired area to the bottom. Each of these three inner tuples contains the Cell objects in one row of our desired area, from the leftmost cell to the right. So, our slice of the sheet contains all the Cell objects in the area from A1 to C3, starting from the top-left cell to the bottom-right cell.
 
-Next, to print the values of each cell in the area, we use two for loops. In line 5, the outer for loop goes over each row in the slice. Then,in line 6, the nested for loop goes through each cell for each row.
+Next, to print the values of each cell in the area, we use two for loops. In line 5, the outer for loop goes over each row in the slice. Then, in line 6, the nested for loop goes through each cell for each row.
