@@ -12,13 +12,13 @@ An S3 bucket provides object storage through a web service interface. Login to y
 
 By default, S3 bucket blocks all public access to it. We will allow the public access to try out a few operations externally/publicly. To make the bucket public, untick "Block all public access" checkbox and click on "Next." Now that everything is set, click "Create the Bucket."
 
-<p align="center"> <img width="700" height="300" src="aws s3 bucket.png"> </p>
+<p align="center"> <img width="900" height="300" src="aws s3 bucket.png"> </p>
 
 - Second, we will create an EC2 instance.
 
 An EC2 instance is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. Search for "EC2" at the top. Then select "Instance" from the side. You will then select "Launch Instance" to create a new EC2 instance. First, choose the machine image. Then, choose EC2 instance types. Then, configure the instance and add storage.
 
-<p align="center"> <img width="500" height="300" src="aws ec2 instance.png"> </p>
+<p align="center"> <img width="600" height="300" src="aws ec2 instance.png"> </p>
 
 - Third, we will create an IAM Role to enable S3 access from an EC2 instance.
 
@@ -26,7 +26,7 @@ Search for "IAM" at the top. Identity and Access Management (IAM) enables you to
 
 This role will be attached to the EC2 instance created earlier. Select the EC2 Instance and click on "Actions." Go to Instance settings and click on "Attach/Replace IAM Role option." Select the IAM role from the drop-down list and click on "Apply." The role has been attached successfully.
 
-<p align="center"> <img width="500" height="300" src="aws IAM role.png"> </p>
+<p align="center"> <img width="600" height="300" src="aws IAM.png"> </p>
 
 You will now need to login to your EC2 instance. The method I use is through PuTTY. Here is a tuturial on how to utilize PuTTY to access the EC2 instance: https://www.youtube.com/watch?v=bi7ow5NGC-U 
 
@@ -102,11 +102,11 @@ sudo mount -a
 aws s3 cp test.txt s3://<mybucketname>/test2.txt
 ```
 
-<p align="center"> <img width="500" height="300" src="ec2 info.png"> </p>
+<p align="center"> <img width="600" height="300" src="ec2 info.png"> </p>
 
-<p align="center"> <img width="500" height="300" src="execution on AWS.png"> </p>
+<p align="center"> <img width="600" height="300" src="execution on AWS.png"> </p>
 
-<p align="center"> <img width="500" height="300" src="execution on CL.png"> </p>
+<p align="center"> <img width="700" height="300" src="execution on CL.png"> </p>
 
 # Blog 2 - February 14, 2020
 
