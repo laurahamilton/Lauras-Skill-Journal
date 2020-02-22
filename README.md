@@ -1,4 +1,114 @@
-# Blog 2 - Febuary 14, 2020
+# Blog 3 - February 22, 2020
+
+## Setting up AWS Infrastructure: EC2, EBS, and S3
+
+<p align="center"> <img width="500" height="300" src="aws-services.png"> </p>
+
+Amazon Web Services can get overwhelming with all the services offered for beginners. Some of the popular services includes Elastic Compute Clouds (EC2), Elastic Block Stores (EBS) and Simple Service Storage (S3) buckets. 
+
+- First, we will create an S3 bucket. 
+
+An S3 bucket provides object storage through a web service interface. Login to your AWS account and search for "S3." Click on "S3" and it will take you to the S3 page. Click on "Create Bucket" and create a bucket by specifying the region of your choosing. Give a unique name to your bucket. We can configure the bucket as per our requirement. If we want to keep multiple versions of the objects, we can enable versioning. There are different options available, for now we will keep everything unticked (default) and click "Next."
+
+By default, S3 bucket blocks all public access to it. We will allow the public access to try out a few operations externally/publicly. To make the bucket public, untick "Block all public access" checkbox and click on "Next." Now that everything is set, click "Create the Bucket."
+
+<p align="center"> <img width="700" height="300" src="aws s3 bucket.png"> </p>
+
+- Second, we will create an EC2 instance.
+
+An EC2 instance is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. Search for "EC2" at the top. Then select "Instance" from the side. You will then select "Launch Instance" to create a new EC2 instance. First, choose the machine image. Then, choose EC2 instance types. Then, configure the instance and add storage.
+
+<p align="center"> <img width="500" height="300" src="aws ec2 instance.png"> </p>
+
+- Third, we will create an IAM Role to enable S3 access from an EC2 instance.
+
+Search for "IAM" at the top. Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources. Select "Roles" on the side and select "Create Role." Search for "AmazonS3" and select "AmazonS3FullAccess" to create the IAM role. Give the role a unique name and provide a small description. 
+
+This role will be attached to the EC2 instance created earlier. Select the EC2 Instance and click on "Actions." Go to Instance settings and click on "Attach/Replace IAM Role option." Select the IAM role from the drop-down list and click on "Apply." The role has been attached successfully.
+
+<p align="center"> <img width="500" height="300" src="aws IAM role.png"> </p>
+
+You will now need to login to your EC2 instance. The method I use is through PuTTY. Here is a tuturial on how to utilize PuTTY to access the EC2 instance: https://www.youtube.com/watch?v=bi7ow5NGC-U 
+
+After successfully entering the EC2 instance, install AWS command line interface. Follow the tuturial here: https://linuxhint.com/install_aws_cli_ubuntu/
+
+- Fourth, we will create and attach and 8G EBS volume to the instance created earlier. 
+
+Make sure to format and mount the filesystem using ext4 or any formatting you’d like. Ideally you would want the EBS mount to automount on reboot and this can be done by modifying the fstab.
+
+Step 1: Head over to EC2 > Volumes and create a new volume of your preferred size and type.
+
+Step 2: Select the created volume, right click and select the "Attach Volume" option.
+
+Step 3: Select the instance from the instance text box.
+
+Step 4: Now, login to your ec2 instance and list the available disks using:
+
+```
+lsblk
+```
+
+Step 5: Check if the volume has any data using:
+
+```
+sudo file -s /dev/xvdf
+```
+
+If the above command output shows "/dev/xvdf: data", it means your volume is empty.
+
+Step 6: Format the volume to ext4 filesystem  using:
+
+```
+sudo mkfs -t ext4 /dev/xvdf
+```
+
+Step 7: Create a directory of your choice to mount our new ext4 volume. I am using the name “newvolume”
+
+```
+sudo mkdir /newvolume
+```
+
+Step 8: Mount the volume to "newvolume" directory using:
+
+```
+sudo mount /dev/xvdf /newvolume/
+```
+
+Step 9: cd into newvolume directory 
+
+By default on every reboot the  EBS volumes other than root volume will get unmounted. To enable automount, you need to make an entry in the /etc/fstab file.
+
+Step 10: Back up the /etc/fstab file.
+
+```
+sudo cp /etc/fstab /etc/fstab.bak
+```
+
+Step 11: Open /etc/fstab file and make an entry in the following format.
+
+```
+device_name mount_point file_system_type fs_mntops fs_freq fs_passno
+```
+
+Step 12: Execute the following command to check id the fstab file has any error.
+
+```
+sudo mount -a
+```
+
+- Fifth, run an "aws s3 cp" command to copy either a newly created / existing file from the EC2 instance to the bucket created earlier. The command should be able to be executed without having to run "aws configure."
+
+```
+aws s3 cp test.txt s3://<mybucketname>/test2.txt
+```
+
+<p align="center"> <img width="500" height="300" src="ec2 info.png"> </p>
+
+<p align="center"> <img width="500" height="300" src="execution on AWS.png"> </p>
+
+<p align="center"> <img width="500" height="300" src="execution on CL.png"> </p>
+
+# Blog 2 - February 14, 2020
 
 ## Setting up Atom as a Python IDE
 
@@ -129,7 +239,7 @@ Add the file to you source-controlled Git repository also. To install the packag
 apm install --packages-file ~/.atom/package.list
 ```
 
-# Blog 1 - Febuary 7, 2020
+# Blog 1 - February 7, 2020
 
 ## Install WordPress on Ubuntu 18.04 Using a LAMP Stack
 
