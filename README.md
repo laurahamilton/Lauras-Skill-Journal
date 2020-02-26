@@ -1,4 +1,56 @@
-# Blog 3 - February 22, 2020
+# Blog 4 - February 28, 2020
+
+## Creating Tables and Querying data with AWS DynamoDB
+
+<p align="center"> <img width="600" height="300" src="dynamoDB.png"> </p>
+
+Amazon Web Services offers a noSQL database known as DynamoDB. Its purpose is to serve as a hassle-free alternative to standard SQL databases since there are no servers to maintain, no backups to schedule and no problem scaling the database to millions of users. DynamoDB offers single millisecond latency and is a great choice to build RESTful APIs, IoT data stores and mobile backends. It is the usual choice for developers while working with other AWS services like Lambda. It also works well with most programming languages like Python, C++ and JavaScript through the AWS SDK. 
+
+We will go through the steps of creating a table in DynamoDB and manipulate its data, as well as utlizing the search options. 
+
+- Working with Tables
+
+<p align="center"> <img width="500" height="300" src="dynamoDB_table.png"> </p>
+
+Unlike MySQL, you do not have to create a database and then create tables within the database. DynamoDB offers a centralized database per account in which you can create any number of tables. First, login to your AWS account and search for "DynamoDB" in the "Find Services" textbox of the AWS Console. There you will select "DynamoDB" and take you to the dashboard. Let's create a new table.
+
+Select "Create table." You will be asked  to enter a table name and a primary key. A primary key is used to uniquely identify a record in a table. DynamoDB allows you to create two types of primary keys:
+
+1. Partition Key: A simple primary key that has the value of the partition in which the data is stored. If a partition key is used as the primary key, no two records can be in the same partition. eg. a unique name.
+
+2. Composite Key: A composite key is a combination of a partition key and a sort value. This enables multiple records to be stored in a single partition with unique sort values within that partition eg. a unique name (partition key) + a member id (sort key)
+
+After entering a table name and its primary key (with or without the sort key), select "Create." Your table should be created and you can start adding data into your DynamoDB table.
+
+<p align="center"> <img width="500" height="300" src="dynamoDB_table1.png"> </p>
+
+Select "Items," where all the items in your table are displayed. Let’s create a new item by selecting "Create Item." You will see the pop-up with the option of adding values to the fields that you have created. You can also add/remove new columns using the "+" icon.
+
+<p align="center"> <img width="500" height="300" src="dynamoDB_table2.png"> </p>
+
+Make sure to provide a unique primary key while adding records. If not, DynamoDB will return an error. Once you have created a few records, it is easy to update/delete records from your table. Select one or more records and then select "Actions" to edit or delete the records from the table.
+
+<p align="center"> <img width="500" height="300" src="dynamoDB_table3.png"> </p>
+
+- Searching (Scan and Query)
+
+The main purpose of adding data to a database is to retrieve that data when needed. DynamoDB has two data retrieval methods: Scan and Query.
+
+1. Scanning returns every record in the database. Scanning a table is useful when you try to work with an entire table and all the values contained in the table. However, scanning is very computing-heavy. If your table contains a large data set, you can easily run out of the free tier capacity offered by AWS.
+
+2. Query is the other data retrieval method offered by DynamoDB. Query lets you use filters to select a range of data to be returned, making the operation more efficient compared to a Scan operation. Query is also similar to the data querying methods used in traditional SQL.
+
+<p align="center"> <img width="500" height="300" src="dynamoDB_table4.png"> </p>
+
+- Indexing
+
+A database is never complete without the option of indexing data. Indexes are used to improve search performances of specific columns in a table by storing an additional searchable version of column(s). Even though indexes use additional space, they offer great improvements in performance. 
+
+Creating an index in DynamoDB is easy. Select "Indexes," then select "Create Index." Choose the partition key and an optional sort key along with a name for the index. You can also choose the "Projected Attributes" which will only include the keys you choose while returning search results. Just remember that creating indexes can also incur additional monthly costs in addition to the DynamoDB pricing! 
+
+<p align="center"> <img width="500" height="300" src="create_index.png"> </p>
+
+# Blog 3 - February 21, 2020
 
 ## Setting up AWS Infrastructure: EC2, EBS, and S3
 
