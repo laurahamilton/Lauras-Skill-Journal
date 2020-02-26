@@ -14,7 +14,7 @@ We will go through the steps of creating a table in DynamoDB and manipulate its 
 
 Unlike MySQL, you do not have to create a database and then create tables within the database. DynamoDB offers a centralized database per account in which you can create any number of tables. First, login to your AWS account and search for "DynamoDB" in the "Find Services" textbox of the AWS Console. There you will select "DynamoDB" and take you to the dashboard. Let's create a new table.
 
-Select "Create table." You will be asked  to enter a table name and a primary key. A primary key is used to uniquely identify a record in a table. DynamoDB allows you to create two types of primary keys:
+Select "Create Table." You will be asked to enter a table name and a primary key. A primary key is used to uniquely identify a record in a table. DynamoDB allows you to create two types of primary keys:
 
 1. Partition Key: A simple primary key that has the value of the partition in which the data is stored. If a partition key is used as the primary key, no two records can be in the same partition. eg. a unique name.
 
@@ -46,7 +46,7 @@ The main purpose of adding data to a database is to retrieve that data when need
 
 A database is never complete without the option of indexing data. Indexes are used to improve search performances of specific columns in a table by storing an additional searchable version of column(s). Even though indexes use additional space, they offer great improvements in performance. 
 
-Creating an index in DynamoDB is easy. Select "Indexes," then select "Create Index." Choose the partition key and an optional sort key along with a name for the index. You can also choose the "Projected Attributes" which will only include the keys you choose while returning search results. Just remember that creating indexes can also incur additional monthly costs in addition to the DynamoDB pricing! 
+Creating an index in DynamoDB is easy. Select "Indexes," then select "Create Index." Choose the partition key and an optional sort key along with a name for the index. You can also choose the "Projected Attributes" which will only include the keys you choose while returning search results. Just remember that creating indexes can also include additional monthly costs in addition to the DynamoDB pricing! 
 
 <p align="center"> <img width="600" height="300" src="create_index.png"> </p>
 
