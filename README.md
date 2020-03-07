@@ -13,9 +13,9 @@ First off, a bit about function stack frames:
 
 <p align="center"> <img width="600" height="300" src="general-purpose-registers.png"> </p>
 
-<p align="center"> <img width="600" height="300" src="pointer-registers.png"> </p>
+<p align="center"> <img width="600" height="200" src="pointer-registers.png"> </p>
 
-<p align="center"> <img width="600" height="300" src="segment-registers.png"> </p>
+<p align="center"> <img width="500" height="300" src="segment-registers.png"> </p>
 
 <p align="center"> <img width="600" height="300" src="index-registers.png"> </p>
 
@@ -29,7 +29,7 @@ We will focus on a stack frame of the function "func()." But before analysing st
 
 Function calling is done by call instruction of a particular line (Line 15) which is subroutine instruction equivalent to:
 
-<p align="center"> <img width="600" height="300" src="c-assembly2.png"> </p>
+<p align="center"> <img width="500" height="100" src="c-assembly2.png"> </p>
 
 Here, "call" stores the "rip+1" (not that +1 is just for simplicity, technically this will be substituted by the size of instruction) in the stack which is return address once call to "func()" ends. 
 
@@ -45,13 +45,13 @@ A function is divided into three parts:
 
 As you can see in the instructions (lines 2 to 4) generated against the start bracket "{," it is setting up the stack frame for "func()." Line 2 is pushing the previous frame pointer into the stack and Line 3 is updating the current frame pointer with a stack end which is going to be a new frame start. "Push" is basically equivalent to:
 
-<p align="center"> <img width="600" height="300" src="c-assembly3.png"> </p>
+<p align="center"> <img width="500" height="100" src="c-assembly3.png"> </p>
 
 - Parameter Passing
 
 "Func()" is stored in the "edi" register on Line 14 before calling the "call" instruction. If there is another argument, then it will be stored in a subsequent register or stack and the address will be used. Line 4 in "func()" is reserving space by pulling frame pointer (pointed by the "rbp" register) down by 4 bytes for the parameter "arg" as it is of type "int." Then the "mov" instruction will initialize it with a value store in "edi." This is how parameters are passed and stored in the current stack frame.
 
-<p align="center"> <img width="600" height="300" src="c-assembly4.png"> </p>
+<p align="center"> <img width="500" height="500" src="c-assembly4.png"> </p>
 
 - User Code / Allocating Space for Local Variables
 
@@ -65,13 +65,13 @@ As you can see above, "g" is addressed directly with its absolute addressing bec
 
 After the user code execution, the previous frame pointer is retrieved from the stack by the "pop" instruction which we have stored in Line 2. "Pop" is equivalent to:
 
-<p align="center"> <img width="600" height="300" src="c-assembly5.png"> </p>
+<p align="center"> <img width="500" height="100" src="c-assembly5.png"> </p>
 
 - Return from Function
 
 The "ret" instruction jumps back to the next instruction from where "func()" called by retrieving the jump address from stack stored by the "call" instruction. "Ret" is a subroutine instruction which is equivalent to:
 
-<p align="center"> <img width="600" height="300" src="c-assembly6.png"> </p>
+<p align="center"> <img width="100" height="100" src="c-assembly6.png"> </p>
 
 If any return value specified then it will be stored in the "eax" register which you can see in Line 16.
 
