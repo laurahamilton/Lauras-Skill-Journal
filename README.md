@@ -1,3 +1,80 @@
+# Blog 5 - March 6, 2020
+## How a C Program Translates into Assembly
+
+<p align="center"> <img width="600" height="300" src="C_Assembly_Binary.png"> </p>
+
+For developers that work with high-level languages, it is important to know how a language is translated from high-level to assmebly-level and eventually to binary. This post will cover the basics of translating a C language program into an assembly language program. This kind of information is strictly ties compiler and ABI. For most of the compilers, ABI and instruction set architecture, they follow nearly the same rules. 
+
+First off, a bit about function stack frames:
+
+1. During function code execution, a new stack frame is created in stack memory to allow access to function parameters and local variables.
+2. The complete information on stack frame size, memory allocation, returning from stack frame, is decided at compile time.
+3. Before diving into assembly code you should be aware of two things: (a) CPU registers of x86 machine; (b) x86 assembly instructions: As this is a very vast topic & updating quite frequently, we will only see the instructions needed for our examples.
+
+<p align="center"> <img width="600" height="300" src="general-purpose-registers.png"> </p>
+
+<p align="center"> <img width="600" height="300" src="pointer-registers.png"> </p>
+
+<p align="center"> <img width="600" height="300" src="segment-registers.png"> </p>
+
+<p align="center"> <img width="600" height="300" src="index-registers.png"> </p>
+
+We will consider the following example with its disassembly inlined to understand its different aspect of its working at machine level:
+
+We will focus on a stack frame of the function "func()." But before analysing stack frame of it, we will see how the calling of function happens.
+
+<p align="center"> <img width="600" height="300" src="c-assembly1.png"> </p>
+
+- Function Calling
+
+Function calling is done by call instruction of a particular line (Line 15) which is subroutine instruction equivalent to:
+
+<p align="center"> <img width="600" height="300" src="c-assembly2.png"> </p>
+
+Here, "call" stores the "rip+1" (not that +1 is just for simplicity, technically this will be substituted by the size of instruction) in the stack which is return address once call to "func()" ends. 
+
+- Function Stack Frame
+
+A function is divided into three parts:
+
+1. Entry 
+2. User Code
+3. Exit
+
+- Entry
+
+As you can see in the instructions (lines 2 to 4) generated against the start bracket "{," it is setting up the stack frame for "func()." Line 2 is pushing the previous frame pointer into the stack and Line 3 is updating the current frame pointer with a stack end which is going to be a new frame start. "Push" is basically equivalent to:
+
+<p align="center"> <img width="600" height="300" src="c-assembly3.png"> </p>
+
+- Parameter Passing
+
+"Func()" is stored in the "edi" register on Line 14 before calling the "call" instruction. If there is another argument, then it will be stored in a subsequent register or stack and the address will be used. Line 4 in "func()" is reserving space by pulling frame pointer (pointed by the "rbp" register) down by 4 bytes for the parameter "arg" as it is of type "int." Then the "mov" instruction will initialize it with a value store in "edi." This is how parameters are passed and stored in the current stack frame.
+
+<p align="center"> <img width="600" height="300" src="c-assembly4.png"> </p>
+
+- User Code / Allocating Space for Local Variables
+
+Line 5 is reserving space for a local variable "a," again by pulling frame pointer further down by 4 bytes. The "mov" instruction will initialize that memory with a value of 5.
+
+- Accessing Global and Local Static Variables
+
+As you can see above, "g" is addressed directly with its absolute addressing because its address is fixed which lies in the data segment. This is not the case all the time. Here we have compiled our code for x86 mode, that’s why it is accessing it with an absolute address. In the case of x64 mode, the address is resolved using "rip" register which meant that the assembler and linker should cooperate to compute the offset of "g" from the ultimate location of the current instruction which is pointed by the "rip" register. The same statement stands true for the local static variables also.
+
+- Exit
+
+After the user code execution, the previous frame pointer is retrieved from the stack by the "pop" instruction which we have stored in Line 2. "Pop" is equivalent to:
+
+<p align="center"> <img width="600" height="300" src="c-assembly5.png"> </p>
+
+- Return from Function
+
+The "ret" instruction jumps back to the next instruction from where "func()" called by retrieving the jump address from stack stored by the "call" instruction. "Ret" is a subroutine instruction which is equivalent to:
+
+<p align="center"> <img width="600" height="300" src="c-assembly6.png"> </p>
+
+If any return value specified then it will be stored in the "eax" register which you can see in Line 16.
+
 # Blog 4 - February 28, 2020
 
 ## Creating Tables and Querying data with AWS DynamoDB
