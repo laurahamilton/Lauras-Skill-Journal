@@ -1,7 +1,7 @@
 # Blog 6 - March 13, 2020
 ## Using Debian to Set Up a Web Developer Environment
 
-<p align="center"> <img width="600" height="300" src="debian.png"> </p>
+<p align="center"> <img width="500" height="200" src="debian.png"> </p>
 
 I am using Debian 9. Debian is also known as Debian GNU/Linux. It is a Linux distribution composed of free and open-source software, developed by the community-supported Debian Project. Every Debian release has long term support for about 5 years. Derivative distros as Ubuntu, Elementary, or Mint, use "apt" or packages ".deb," so the commands posted here can also work for such distros.
 
@@ -18,8 +18,8 @@ Since this is for web development, here is what you will need:
 - git: version control standar, and some git functions, aliases and tricks
 - nodejs: JavaScript runtime
 - some useful tools for web developers: (screenshots, GIMP, VLC, Slack, and teamViewer)
-
-- Prerquitistes: 
+-------------------------------------------------------------------------------------------
+- Prerequisites: 
 Have sudo access ready. This command must return "root" :
 ```
 sudo whoami
@@ -38,7 +38,7 @@ sudo apt install make curl build-essential openssl libssl-dev unzip
 
 - A Nice Editor: Visual Studio Code
 
-<p align="center"> <img width="600" height="300" src="vscode.png"> </p>
+<p align="center"> <img width="200" height="200" src="vscode.png"> </p>
 
 ```
 sudo apt install ./code_x.xx.x-xx_amd64.deb
@@ -47,7 +47,7 @@ sudo apt install ./code_x.xx.x-xx_amd64.deb
 "Apt" will auto magically set up everything and when all is finished you can open vcsode from your terminal (typing "code"), menu or launcher. Once it is installed, make sure to look at extensions for VS Code.
 
 - A Standard Version Control System: Git
-<p align="center"> <img width="600" height="300" src="git.png"> </p>
+<p align="center"> <img width="400" height="200" src="git.png"> </p>
 
 Git is super easy to install: 
 
@@ -65,13 +65,13 @@ git config --global user.email "your.name@domain.com"
 
 Remember to put your name (or nickname) and your email. Now you should have Git installed and ready to use on your system. 
 
-- Git Alias (for Commands): https://github.com/GitAlias/gitalias
-- Undoing/Removing Commits in Git: https://sethrobertson.github.io/GitFixUm/fixup.html
-- Git Online Book: https://git-scm.com/book/en/v2
+1. Git Alias (for Commands): https://github.com/GitAlias/gitalias
+2. Undoing/Removing Commits in Git: https://sethrobertson.github.io/GitFixUm/fixup.html
+3. Git Online Book: https://git-scm.com/book/en/v2
 
 - Developing for JavaScript: Install NodeJS
 
-<p align="center"> <img width="600" height="300" src="nodejs.jpg"> </p>
+<p align="center"> <img width="500" height="200" src="nodejs.jpg"> </p>
 
 Most people find it difficult to install node in Windows in comparison to install it on Linux. This is usually one of the reasons developers turn to Linux as a new primary OS. Web programming usually involves NodeJS. Better sooner than later.
 
@@ -82,7 +82,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 sudo apt install -y nodejs
 ```
 
-- Get started with NodeJS: https://www.w3schools.com/nodejs/nodejs_get_started.asp
+1. Get started with NodeJS: https://www.w3schools.com/nodejs/nodejs_get_started.asp
 
 Now you can use VSCode for making scripts and code to run over NodeJS, save it in a repository using Git and share it!
 
