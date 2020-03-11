@@ -5,7 +5,7 @@
 
 I am using Debian 9. Debian is also known as Debian GNU/Linux. It is a Linux distribution composed of free and open-source software, developed by the community-supported Debian Project. Every Debian release has long term support for about 5 years. Derivative distros as Ubuntu, Elementary, or Mint, use "apt" or packages ".deb," so the commands posted here can also work for such distros.
 
-***note: I have Debian 9 already installed in a virtual machine, ***
+***note: I have Debian 9 already installed in a virtual machine. ***
 
 An excellent developer environment needs:
 - An IDE or good text editor
@@ -18,8 +18,8 @@ Since this is for web development, here is what you will need:
 - git: version control standar, and some git functions, aliases and tricks
 - nodejs: JavaScript runtime
 - some useful tools for web developers: (screenshots, GIMP, VLC, Slack, and teamViewer)
--------------------------------------------------------------------------------------------
-- Prerequisites: 
+
+Prerequisites: 
 Have sudo access ready. This command must return "root" :
 ```
 sudo whoami
