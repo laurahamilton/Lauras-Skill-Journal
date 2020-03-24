@@ -13,11 +13,11 @@ First we will take the AWS credentials and dump them to a temp file this is name
 
 Next we are going to create a script named encrypt.sh. This will accept the file that is passed to it and then generate an encrypted file.
 
-<p align="center"> <img width="500" height="200" src="encrypt_sh.png"> </p>
+<p align="center"> <img width="600" height="200" src="encrypt_sh.png"> </p>
 
 Lets write a quick script that will decrypt the encrypted file and just echo it out. There is a built-in on openssl that can do it. Also include a proper shebang at the top of the file. This is crucial for AWS to be able to run the script properly. 
 
-<p align="center"> <img width="500" height="200" src="decrypt_sh.png"> </p>
+<p align="center"> <img width="600" height="200" src="decrypt_sh.png"> </p>
 
 Encrypt the file and then prep it. 
 
@@ -25,7 +25,7 @@ Encrypt the file and then prep it.
 
 Now lets setup our AWS profile to read the credentials from the external process. We will need to update `~/.aws/config` and pass the full path of the script and the full path of the encrypted file. 
 
-<p align="center"> <img width="500" height="200" src="aws_credentials.png"> </p>
+<p align="center"> <img width="800" height="200" src="aws_credentials.png"> </p>
 
 On the AWS CLI, we are going to tell the current session to use the new profile and verify if the whole process worked:
 
@@ -36,7 +36,7 @@ aws sts get-caller-identity
 
 There is another method for this as well. If there is a process out there that will issue the credentials for you and then stash them in your AWS profile, at least make the storing of those credentials a little bit better. This is a script that will handle that. You will provide the shell script with the named account profile to reference to use that account. This script also relies on having the decrypt.sh script from earlier.
 
-<p align="center"> <img width="500" height="200" src="aws_script.png"> </p>
+<p align="center"> <img width="600" height="800" src="aws_script.png"> </p>
 
 When we run this script it will look at the AWS credentials file, and pull out the id/key/token, drop those values into a new file, encrypt it, overwrite, then delete the temp file, and finally "xxxx" out the original values in the creds file. If the profile in question does not use session token, then simply remove that section of the script.
 
