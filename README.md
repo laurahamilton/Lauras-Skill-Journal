@@ -1,3 +1,45 @@
+# Blog 7 - March 27, 2020
+## How to Safely Store AWS Credentials
+
+<p align="center"> <img width="500" height="200" src="aws_configure.png"> </p>
+
+By default, the AWS command line interface stored key id and secret in plaintext "somewhere in a well-known location." There is a method to make this a little bit harder. AWS config has a setting that allows AWS to source the credentials externally. This is very handy if you don not want to store credentials as plain text files. Every small step to take to a better secure system is a small step towards a better security leaning. This is known as "credential process." 
+
+We can use this with native openssl to give you a poor person's encrypted AWS keys!
+
+First we will take the AWS credentials and dump them to a temp file this is named key.json 
+
+<p align="center"> <img width="500" height="200" src="key_json.png"> </p>
+
+Next we are going to create a script named encrypt.sh. This will accept the file that is passed to it and then generate an encrypted file.
+
+<p align="center"> <img width="500" height="200" src="encrypt_sh.png"> </p>
+
+Lets write a quick script that will decrypt the encrypted file and just echo it out. There is a built-in on openssl that can do it. Also include a proper shebang at the top of the file. This is crucial for AWS to be able to run the script properly. 
+
+<p align="center"> <img width="500" height="200" src="decrypt_sh.png"> </p>
+
+Encrypt the file and then prep it. 
+
+<p align="center"> <img width="500" height="200" src="prep_file.png"> </p>
+
+Now lets setup our AWS profile to read the credentials from the external process. We will need to update `~/.aws/config` and pass the full path of the script and the full path of the encrypted file. 
+
+<p align="center"> <img width="500" height="200" src="aws_credentials.png"> </p>
+
+On the AWS CLI, we are going to tell the current session to use the new profile and verify if the whole process worked:
+
+```
+export AWS_PROFILE=mine-encrypted
+aws sts get-caller-identity
+```
+
+There is another method for this as well. If there is a process out there that will issue the credentials for you and then stash them in your AWS profile, at least make the storing of those credentials a little bit better. This is a script that will handle that. You will provide the shell script with the named account profile to reference to use that account. This script also relies on having the decrypt.sh script from earlier.
+
+<p align="center"> <img width="500" height="200" src="aws_script.png"> </p>
+
+When we run this script it will look at the AWS credentials file, and pull out the id/key/token, drop those values into a new file, encrypt it, overwrite, then delete the temp file, and finally "xxxx" out the original values in the creds file. If the profile in question does not use session token, then simply remove that section of the script.
+
 # Blog 6 - March 13, 2020
 ## Using Debian to Set Up a Web Developer Environment
 
