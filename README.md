@@ -38,6 +38,50 @@ You can now attach your new volume to the Amazon EC2 instance. First, select My 
 ***Mac and Linux OS Users***
 
 - Create and Configure Your File System
+
+Now, you will add the new volume to a Linux instance as an ext3 file system under the /mnt/data-store mount point.
+
+First, view the available storage on your device:
+```
+df -h
+```
+
+Create an ext3 file system on the new volume:
+```
+sudo mkfs -t ext3 /dev/sdf
+```
+
+Create a directory for mounting the new storage volume:
+```
+sudo mkdir /mnt/data-store
+```
+
+Mount the new volume:
+```
+sudo mount /dev/sdf /mnt/data-store
+```
+
+To configure the Linux instance, you will need to add a line to /etc/fstab: 
+```
+echo "/dev/sdf   /mnt/data-store ext3 defaults,noatime 1 2" | sudo tee -a /etc/fstab
+```
+
+View the configuration file to see the setting on the last line. Then view the available storage again. The output will now contain an additional line - /dev/xvdf:
+```
+cat /etc/fstab
+df -h
+```
+
+On your mounted volume, create a file and add some text to it:
+```
+sudo sh -c "echo some text has been written > /mnt/data-store/file.txt"
+```
+
+Verify that the text has been written to your volume:
+```
+cat /mnt/data-store/file.txt
+```
+
 - Create an Amazon EBS Snapshot
 - Restore the Amazon EBS Snapshot
 
