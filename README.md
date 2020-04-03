@@ -11,6 +11,8 @@ We will create an Amazon EBS volume, attach it to an instance, apply a file syst
 
 - Create a New EBS Volume
 
+<p align="center"> <img width="700" height="350" src="createEBSvolume.png"> </p>
+
 In this task, you will create and attach an EBS volume to a new EC2 instance. In the AWS Management Console, on the Services menu, click EC2. Then, in the left navigation pane, click Instances. Choose an available instance to work with and note its availability zone (i.e. us-west-2a).
 
 Next, in the left navigation pane, click Volumes. You will see an existing volume that is being used by your EC2 instance. The volume we will create will be 1 GiB in size, making it easy to distinguish. 
@@ -29,13 +31,21 @@ Click Create Volume then click Close. Your new volume will appear in the list. I
 
 - Attach the Volume to an Instance
 
-You can now attach your new volume to the Amazon EC2 instance. First, select My Volume. In the Actions menu, click Attach Volume. Then, click in the Instance field and select the instance name that you are working with, noting that the device field is set to /dev/sdf. Finally, click Attach. The volume state is now in-use.
+<p align="center"> <img width="600" height="200" src="attachvolume.png"> </p>
+
+You can now attach your new volume to the Amazon EC2 instance. 
+
+First, select My Volume. In the Actions menu, click Attach Volume. Then, click in the Instance field and select the instance name that you are working with, noting that the device field is set to /dev/sdf. Finally, click Attach. The volume state is now in-use.
 
 - Connect to Your Amazon EC2 Instance
 
 ***Windows Users***
 
+<p align="center"> <img width="500" height="300" src="putty.jpg"> </p>
+
 ***Mac and Linux OS Users***
+
+<p align="center"> <img width="500" height="300" src="terminal.jpg"> </p>
 
 - Create and Configure Your File System
 
