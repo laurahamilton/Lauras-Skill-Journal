@@ -41,11 +41,15 @@ First, select My Volume. In the Actions menu, click Attach Volume. Then, click i
 
 ***Windows Users***
 
-<p align="center"> <img width="500" height="300" src="putty.jpg"> </p>
+<p align="center"> <img width="300" height="100" src="putty.jpg"> </p>
+
+Use SSH to connect using PuTTY. Download the .ppk file to host a session to connect to the EC2 instance with the IPv4 Public Value.   
 
 ***Mac and Linux OS Users***
 
-<p align="center"> <img width="500" height="300" src="terminal.jpg"> </p>
+<p align="center"> <img width="300" height="100" src="terminal.jpg"> </p>
+
+Use SSH to connect using the terminal/console. Download the .pem file and change the permissions for the file to be read. Connect to the EC2 instance with the IPv4 Public Value. 
 
 - Create and Configure Your File System
 
