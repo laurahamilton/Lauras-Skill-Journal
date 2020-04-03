@@ -31,7 +31,7 @@ Click Create Volume then click Close. Your new volume will appear in the list. I
 
 - Attach the Volume to an Instance
 
-<p align="center"> <img width="600" height="200" src="attachvolume.png"> </p>
+<p align="center"> <img width="700" height="200" src="attachvolume.png"> </p>
 
 You can now attach your new volume to the Amazon EC2 instance. 
 
