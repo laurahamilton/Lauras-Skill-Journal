@@ -1,7 +1,7 @@
 # Blog 8 - April 3, 2020
 ## AWS : Working with an Elastic Block Store
 
-<p align="center"> <img width="300" height="400" src="AWS-EBS.jpg"> </p>
+<p align="center"> <img width="350" height="400" src="AWS-EBS.jpg"> </p>
 
 On AWS, an Elastic Block Store (EBS) is a key underlying storage mechanism for EC2 instances. They are network-attached and carry on independently from the life of an instance. EBS volumes are highly reliable volumes that can be used to maximum advantage as an EC2 instances boot partitions or attaches to a running EC2 instance as a standard block device.
 
@@ -29,15 +29,7 @@ Click Create Volume then click Close. Your new volume will appear in the list. I
 
 - Attach the Volume to an Instance
 
-You can now attach your new volume to the Amazon EC2 instance.
-```
-    Select My Volume.
-    In the Actions menu, click Attach Volume.
-    Click in the Instance field, then select the instance name that you are working with.
-    Note that the Device field is set to /dev/sdf.
-    Click Attach 
- ```  
-The volume state is now in-use.
+You can now attach your new volume to the Amazon EC2 instance. First, select My Volume. In the Actions menu, click Attach Volume. Click in the Instance field, then select the instance name that you are working with and note that the Device field is set to /dev/sdf. Finally, Click Attach. The volume state is now in-use.
 
 - Connect to Your Amazon EC2 Instance
 
