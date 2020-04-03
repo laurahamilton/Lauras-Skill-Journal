@@ -29,7 +29,7 @@ Click Create Volume then click Close. Your new volume will appear in the list. I
 
 - Attach the Volume to an Instance
 
-You can now attach your new volume to the Amazon EC2 instance. First, select My Volume. In the Actions menu, click Attach Volume. Click in the Instance field, then select the instance name that you are working with and note that the Device field is set to /dev/sdf. Finally, Click Attach. The volume state is now in-use.
+You can now attach your new volume to the Amazon EC2 instance. First, select My Volume. In the Actions menu, click Attach Volume. Click in the Instance field, then select the instance name that you are working with and note that the device field is set to /dev/sdf. Finally, click Attach. The volume state is now in-use.
 
 - Connect to Your Amazon EC2 Instance
 
