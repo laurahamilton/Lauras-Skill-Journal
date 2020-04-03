@@ -119,8 +119,7 @@ In your remote SSH session, delete the file that you created on your volume and 
 sudo rm /mnt/data-store/file.txt
 ls /mnt/data-store/
 ```
-
-<p align="center"> <img width="600" height=400" src="Pic 2.png"> </p>
+<p align="center"> <img width="600" height="400" src="Pic 2.png"> </p>
 
 # Blog 7 - March 27, 2020
 ## How to Safely Store AWS Credentials
