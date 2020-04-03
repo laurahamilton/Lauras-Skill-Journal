@@ -1,3 +1,54 @@
+# Blog 8 - April 3, 2020
+## AWS : Working with an Elastic Block Store
+
+<p align="center"> <img width="300" height="400" src="AWS-EBS.jpg"> </p>
+
+On AWS, an Elastic Block Store (EBS) is a key underlying storage mechanism for EC2 instances. They are network-attached and carry on independently from the life of an instance. EBS volumes are highly reliable volumes that can be used to maximum advantage as an EC2 instances boot partitions or attaches to a running EC2 instance as a standard block device.
+
+We will create an Amazon EBS volume, attach it to an instance, apply a file system to the volume, and then take a snapshot backup.
+
+***Note: You will need to have ready an AWS EC2 instance with basic Linux user administration to work with.***
+
+- Create a New EBS Volume
+
+In this task, you will create and attach an EBS volume to a new EC2 instance. In the AWS Management Console, on the Services menu, click EC2. Then, in the left navigation pane, click Instances. Choose an available instance to work with and note its availability zone (i.e. us-west-2a).
+
+Next, in the left navigation pane, click Volumes. You will see an existing volume that is being used by your EC2 instance. The volume we will create will be 1 GiB in size, making it easy to distinguish. 
+
+Click Create Volume then configure:
+```
+        Volume Type: General Purpose SSD (gp2)
+        Size (GiB): 1. 
+        Availability Zone: Select the same availability zone as your EC2 instance.
+        Click Add Tag
+        In the Tag Editor, enter:
+            Key: Name
+            Value: My Volume
+```
+Click Create Volume then click Close. Your new volume will appear in the list. If not, click refresh to see your new volume.
+
+- Attach the Volume to an Instance
+
+You can now attach your new volume to the Amazon EC2 instance.
+```
+    Select My Volume.
+    In the Actions menu, click Attach Volume.
+    Click in the Instance field, then select the instance name that you are working with.
+    Note that the Device field is set to /dev/sdf.
+    Click Attach 
+ ```  
+The volume state is now in-use.
+
+- Connect to Your Amazon EC2 Instance
+
+***Windows Users***
+
+***Mac and Linux OS Users***
+
+- Create and Configure Your File System
+- Create an Amazon EBS Snapshot
+- Restore the Amazon EBS Snapshot
+
 # Blog 7 - March 27, 2020
 ## How to Safely Store AWS Credentials
 
