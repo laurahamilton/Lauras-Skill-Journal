@@ -82,6 +82,8 @@ Verify that the text has been written to your volume:
 cat /mnt/data-store/file.txt
 ```
 
+<p align="center"> <img width="500" height="200" src="Pic 1.png"> </p>
+
 - Create an Amazon EBS Snapshot
 
 You can create any number of consistent, sychronized snapshots from EBS volumes at any time. EBS snapshots are stored in S3 with high durability. A new EBS volume can be created out of snapshots for cloning or restoring backups. They can also be easily shared among users or copied over regions.
@@ -102,8 +104,7 @@ sudo rm /mnt/data-store/file.txt
 ls /mnt/data-store/
 ```
 
-- Restore the Amazon EBS Snapshot
-
+<p align="center"> <img width="500" height="200" src="Pic 2.png"> </p>
 
 # Blog 7 - March 27, 2020
 ## How to Safely Store AWS Credentials
