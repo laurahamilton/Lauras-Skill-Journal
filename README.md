@@ -86,6 +86,8 @@ cat /mnt/data-store/file.txt
 
 - Create an Amazon EBS Snapshot
 
+<p align="center"> <img width="600" height="300" src="EBSoverview.png"> </p>
+
 You can create any number of consistent, sychronized snapshots from EBS volumes at any time. EBS snapshots are stored in S3 with high durability. A new EBS volume can be created out of snapshots for cloning or restoring backups. They can also be easily shared among users or copied over regions.
 
 First, in the AWS Management Console, click on Volumes and select My Volume. Then, in the Actions menu, click Create Snapshot.
