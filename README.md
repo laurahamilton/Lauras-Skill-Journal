@@ -133,7 +133,7 @@ A message pops up, explaining that the application is executing a command to cop
 
 <p align="center"> <img width="800" height="300" src="Picture 1.png"> </p>
 
-<p align="center"> <img width="600" height="300" src="Picture 2.png"> </p>
+<p align="center"> <img width="700" height="300" src="Picture 2.png"> </p>
 
 ***Completed Infrastructure***
 <p align="center"> <img width="600" height="300" src="end.png"> </p>
