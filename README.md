@@ -131,7 +131,7 @@ Click Submit.
 
 A message pops up, explaining that the application is executing a command to copy information to the database. After a few seconds, the application will display an Address Book. The Address Book application is using the RDS database to store information. Test the web application by adding, editing and removing contacts. The data is being held onto the database and is automatically replicating to the second Availability Zone.
 
-<p align="center"> <img width="600" height="300" src="Picture 1.png"> </p>
+<p align="center"> <img width="800" height="300" src="Picture 1.png"> </p>
 
 <p align="center"> <img width="600" height="300" src="Picture 2.png"> </p>
 
