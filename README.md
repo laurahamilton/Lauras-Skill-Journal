@@ -100,7 +100,7 @@ For Existing VPC security groups: click DB Security Group to highlight it in blu
 
 Expand Additional configuration, then configure:
 ```
-Initial database name: Sample
+Initial database name: lab
 Uncheck Enable automatic backups.
 Uncheck Enable Enhanced monitoring.
 ```
@@ -111,7 +111,7 @@ If an error pops up that mentions "not authorized to perform: iam:CreateRole", m
 
 Next, click sample-db (click the link itself). Now, you will wait about four minutes for the database to be available. The deployment process is deploying a database in two different Availability zones. Wait until Info changes to Modifying or Available.
 
-Once this change is complete, scroll down to the Connectivity & Security Section and copy the Endpoint field. It will look similar to: sample-db.cggq8lhnxvnv.us-west-2.rds.amazonaws.com. Finally, paste the Endpoint value into a text editor. You will use it later.
+Once this change is complete, scroll down to the Connectivity & Security Section and copy the Endpoint field. It will look similar to: lab-db.cggq8lhnxvnv.us-west-2.rds.amazonaws.com. Finally, paste the Endpoint value into a text editor. You will use it later.
 
 - Interact with Your Database
 
@@ -122,7 +122,7 @@ First, click on the Details drop down menu and then click Show. Next, copy the W
 Configure the following settings:
 ```
 Endpoint: Paste the Endpoint you copied to a text editor earlier
-Database: sample
+Database: lab
 Username: master
 Password: samplepassword987
 ```
@@ -130,6 +130,10 @@ Password: samplepassword987
 Click Submit.
 
 A message pops up, explaining that the application is executing a command to copy information to the database. After a few seconds, the application will display an Address Book. The Address Book application is using the RDS database to store information. Test the web application by adding, editing and removing contacts. The data is being held onto the database and is automatically replicating to the second Availability Zone.
+
+<p align="center"> <img width="600" height="300" src="Picture 1.png"> </p>
+
+<p align="center"> <img width="600" height="300" src="Picture 2.png"> </p>
 
 ***Completed Infrastructure***
 <p align="center"> <img width="600" height="300" src="end.png"> </p>
@@ -159,10 +163,14 @@ Click Create Volume then configure:
         Size (GiB): 1. 
         Availability Zone: Select the same availability zone as your EC2 instance.
         Click Add Tag
-        In the Tag Editor, enter:
-            Key: Name
-            Value: My Volume
 ```
+
+In the Tag Editor, enter:
+```
+Key: Name
+Value: My Volume
+```
+
 Click Create Volume then click Close. Your new volume will appear in the list. If not, click refresh to see your new volume.
 
 - Attach the Volume to an Instance
