@@ -1,3 +1,139 @@
+# Blog 9 - April 10, 2020
+## AWS : How to Build and Interact with a Relational Database Service
+
+<p align="center"> <img width="600" height="300" src="aws_rds.png"> </p>
+
+On AWS, a Relational Database Service (RDS) is easy to set up, operate, and scale a relational database in the cloud. It is noted to be cost-efficient due to its resizeable capabilities while managing time-consuming database administration tasks. RDS allows users to focus on applications and business and provides users with six familiar database engines to choose from: Amazon Aurora, Oracle, Microsoft SQL Server, PostgreSQL, MySQL and MariaDB.
+
+***Note: An established web server altogether is not necessary. But you will need to at least have an established VPC with two private and two public subnets under two different availability zones, an internet gateway and a NAT gateway.***
+
+***Beginning Infrastructure***
+<p align="center"> <img width="600" height="300" src="start.png"> </p>
+
+- Create a Security Group for the RDS DB Instance
+
+We will create a security group to allow a web server to access your RDS DB instance. When the database instance is launched, the security group will be used. First, in the AWS Management Console, go to on the Services menu and click VPC. Then, in the left navigation pane, click Security Groups.
+
+Click Create Security Group and then configure:
+```
+Security group name: DB Security Group
+Description: Permit access from Web Security Group
+VPC: name of your VPC
+```
+
+Click Create. Then click Close.
+
+Now, let's add a rule to the security group to permit inbound database requests. First, select DB Security Group and click the Inbound Rules tab. The security group should have no rules, or rules you estalished earlier. Now, we will add a rule to permit access from the Web Security Group (if you have a rule permitting traffic on port 3306, skip this step).
+
+Click Edit Rules. Next, click Add Rule then configure:
+```
+Type: MySQL/Aurora (3306)
+CIDR, IP, Security Group or Prefix List: Type sg and then select Web Security Group.
+```
+
+This configures the Database security group to permit inbound traffic on port 3306 from any EC2 instance that is associated with the Web Security Group. Finally, click Save Rules then click Close. This will be the security group when launching the Amazon RDS database.
+
+- Create a DB Subnet Group
+
+We will create a DB subnet group that is used to tell RDS which subnets can be used for the database. Each DB subnet group requires subnets in at least two Availability Zones. First, on the Services menu, click RDS. In the left navigation pane, click Subnet groups.
+
+Click Create DB Subnet Group then configure:
+```
+Name: DB Subnet Group
+Description: DB Subnet Group
+VPC: name of your VPC
+Availability zone: Select the first Availability Zone
+Subnet: add your private subnet
+Click Add subnet
+```
+
+This will add one of the private subnets. You will now add a second private subnet.
+
+Configure these settings (on the existing screen):
+```
+Availability zone: Select the second Availability Zone
+Subnet: add your private subnet
+Click Add subnet
+```
+
+Your private subnets (i.e. 10.0.1.0/24 and 10.0.3.0/24) should now be shown in the list. Finally, click Create. When you create the databse in the next task, you will use this database subnet group.
+
+- Create an Amazon RDS DB Instance
+
+We will configure and launch a Multi-Availability Zone (AZ) Amazon RDS for MySQL database instance.
+
+***What are RDS Multi-AZ deployments?***
+
+RDS Multi-AZ deployments provide enhanced availability and durability for database instances. They are a great fit for production database workloads. By provisioning a Multi-AZ DB instance, an RDS automatically creates a primary database instance and synchronously replicates data to a standby instance in a different Availability Zone (AZ).
+
+Fitrst, in the left navigation pane, click Database. At the top of the screen, click if you see Switch to the New Database Creation Flow. Next, Select MySQL.
+
+Under Settings, configure:
+```
+DB instance identifier: lab-db
+Master username: master
+Master password: samplepassword987
+Confirm password: samplepassword987
+```
+
+Under DB instance size, configure:
+```
+Select Burstable classes (includes t classes).
+Select db.t3.micro
+```
+
+Under Storage, configure:
+```
+Storage type: General Purpose (SSD)
+Allocated storage: 20
+```
+
+Under Connectivity, configure:
+```
+Virtual Private Cloud (VPC): name of your VPC
+```
+
+Expand Additional connectivity configuration, then configure:
+```
+For Existing VPC security groups: click DB Security Group to highlight it in blue
+```
+
+Expand Additional configuration, then configure:
+```
+Initial database name: Sample
+Uncheck Enable automatic backups.
+Uncheck Enable Enhanced monitoring.
+```
+
+This will turn off backups. Not normally recommended, but will make the database deploy faster for this tutorial. After that, click Create Database. The database will now be launched.
+
+If an error pops up that mentions "not authorized to perform: iam:CreateRole", make sure you unchecked Enable Enhanced monitoring in the previous step.
+
+Next, click sample-db (click the link itself). Now, you will wait about 4 minutes for the database to be available. The deployment process is deploying a database in two different Availability zones. Wait until Info changes to Modifying or Available.
+
+Once this change is complete, scroll down to the Connectivity & Security Section and copy the Endpoint field. It will look similar to: sample-db.cggq8lhnxvnv.us-west-2.rds.amazonaws.com. Finally, paste the Endpoint value into a text editor. You will use it later.
+
+- Interact with Your Database
+
+We will open a web application running on your web server and configure it to use the database.
+
+First, click on the Details drop down menu and then click Show. Next, copy the WebServer IP address. Open a new web browser tab, paste the WebServer IP address and press Enter. The web application will be displayed with information about the EC2 instance. Click the RDS link at the top of the page. We will now configure the application to connect to the database.
+
+Configure the following settings:
+```
+Endpoint: Paste the Endpoint you copied to a text editor earlier
+Database: sample
+Username: master
+Password: samplepassword987
+```
+
+Click Submit.
+
+A message pops up, explaining that the application is executing a command to copy information to the database. After a few seconds, the application will display an Address Book. The Address Book application is using the RDS database to store information. Test the web application by adding, editing and removing contacts. The data is being held onto the database and is automatically replicating to the second Availability Zone.
+
+***Completed Infrastructure***
+<p align="center"> <img width="600" height="300" src="end.png"> </p>
+
 # Blog 8 - April 3, 2020
 ## AWS : Working with an Elastic Block Store
 
@@ -13,7 +149,7 @@ We will create an Amazon EBS volume, attach it to an instance, apply a file syst
 
 <p align="center"> <img width="700" height="350" src="createEBSvolume.png"> </p>
 
-In this task, you will create and attach an EBS volume to a new EC2 instance. In the AWS Management Console, on the Services menu, click EC2. Then, in the left navigation pane, click Instances. Choose an available instance to work with and note its availability zone (i.e. us-west-2a).
+In this task, you will create and attach an EBS volume to a new EC2 instance. In the AWS Management Console, go to the Services menu and click EC2. In the left navigation pane, click Instances. Choose an available instance to work with and note its availability zone.
 
 Next, in the left navigation pane, click Volumes. You will see an existing volume that is being used by your EC2 instance. The volume we will create will be 1 GiB in size, making it easy to distinguish. 
 
