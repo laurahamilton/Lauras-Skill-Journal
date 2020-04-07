@@ -66,7 +66,7 @@ We will configure and launch a Multi-Availability Zone (AZ) Amazon RDS for MySQL
 
 RDS Multi-AZ deployments provide enhanced availability and durability for database instances. They are a great fit for production database workloads. By provisioning a Multi-AZ DB instance, an RDS automatically creates a primary database instance and synchronously replicates data to a standby instance in a different Availability Zone (AZ).
 
-Fitrst, in the left navigation pane, click Database. At the top of the screen, click if you see Switch to the New Database Creation Flow. Next, Select MySQL.
+First, in the left navigation pane, click Database. At the top of the screen, click if you see Switch to the New Database Creation Flow. Next, Select MySQL.
 
 Under Settings, configure:
 ```
@@ -109,7 +109,7 @@ This will turn off backups. Not normally recommended, but will make the database
 
 If an error pops up that mentions "not authorized to perform: iam:CreateRole", make sure you unchecked Enable Enhanced monitoring in the previous step.
 
-Next, click sample-db (click the link itself). Now, you will wait about 4 minutes for the database to be available. The deployment process is deploying a database in two different Availability zones. Wait until Info changes to Modifying or Available.
+Next, click sample-db (click the link itself). Now, you will wait about four minutes for the database to be available. The deployment process is deploying a database in two different Availability zones. Wait until Info changes to Modifying or Available.
 
 Once this change is complete, scroll down to the Connectivity & Security Section and copy the Endpoint field. It will look similar to: sample-db.cggq8lhnxvnv.us-west-2.rds.amazonaws.com. Finally, paste the Endpoint value into a text editor. You will use it later.
 
