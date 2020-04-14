@@ -49,7 +49,7 @@ In the Database row, click Modify. Next, click Monitoring. Browse through the ch
 
 In the Services menu, choose EC2. Next, click Instances. Note the number of instances are running. Those instances should support your web application. 
 
-If you want to continue exploring the Amazon EC2 service resources that were created by Elastic Beanstalk, feel free to explore them. You will find a security group with port 80 open, load balancer that both instances belong to and an auto scaling group that runs from two to six instances, depending on the network load. 
+If you want to continue exploring the EC2 service resources created by Elastic Beanstalk, go ahead and explore them. You will find a security group with port 80 open, load balancer that both instances belong to and an auto scaling group that runs from two to six instances, depending on the network load. 
 
 <p align="center"> <img width="600" height="300" src="AWS Elastic Beanstock 2.png"> </p>
 
