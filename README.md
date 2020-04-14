@@ -1,3 +1,29 @@
+# Blog 10 - April 17, 2020
+## AWS : Deploy a Sample Application to Elastic Beanstalk 
+
+<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstalk.png"> </p>
+
+On AWS, an Elastic Beanstalk is a simple service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, and Docker on familiar servers such as Apache, Nginx, and Passenger.
+
+By simply uploading code, Elastic Beanstalk will automatically handls the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. The user retains total control over the AWS resources powering the application . The user also can access the underlying resources at any time.
+
+Elastic Beanstalk's best advantage is that a user only pays for the AWS resources needed to store and run the application.
+
+***Note: You must have an Elastic Beanstalk environment to continue.***
+
+- Access the Elastic Beanstalk Environment
+
+***Base Setup***
+<p align="center"> <img width="600" height="300" src="AWS EB Diagram.png"> </p>
+
+- Deploy a Sample Application to Elastic Beanstalk
+
+<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstalk 1.png"> </p>
+
+- Explore the AWS Resources that Support your Application
+
+<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstalk 2.png"> </p>
+
 # Blog 9 - April 10, 2020
 ## AWS : How to Build and Interact with a Relational Database Service
 
