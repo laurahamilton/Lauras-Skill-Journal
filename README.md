@@ -7,20 +7,49 @@ On AWS, an Elastic Beanstalk is a simple service for deploying and scaling web a
 
 By simply uploading code, Elastic Beanstalk will automatically handls the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. The user retains total control over the AWS resources powering the application . The user also can access the underlying resources at any time.
 
+***Planned Setup***
+
+<p align="center"> <img width="600" height="300" src="AWS EB Diagram.png"> </p>
+
 Elastic Beanstalk's best advantage is that a user only pays for the AWS resources needed to store and run the application.
 
-***Note: You must have an Elastic Beanstalk environment to continue.***
+***Note: You must have an Elastic Beanstalk environment without an application running on it to continue.***
 
 - Access the Elastic Beanstalk Environment
 
-***Base Setup***
-<p align="center"> <img width="600" height="300" src="AWS EB Diagram.png"> </p>
+Go to Management Console from the Services menu and choose Elastic Beanstalk. A page titled All Applications opens up, and it should show a green box (indicating good health) that details the conditions for your existing Elastic Beanstalk application.
+
+***Example***
+
+<p align="center"> <img width="600" height="300" src="AWS EB example.png"> </p>
+
+In the green application details box, click on the URL value displayed. It will take you to the Dashboard page for your Elastic Beanstalk environment. The Elastic Beanstalk environment is prepared to host an application. What's missing is the running code.
+
+Now, at the top of the page, click the URL that ends in elasticbeanstalk.com. When you click it, a new browser tab opens. However, you should display an "HTTP Status 404 - Not Found" message. This is expected because this application server doesn't have an application running on it yet. Go back to the Elastic Beanstalk console without closing that browser.
 
 - Deploy a Sample Application to Elastic Beanstalk
 
+Download a sample application by clicking this link: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/samples/java-tomcat-v3.zip
+
+In the Elastic Beanstalk console, click Upload and Deploy. Next, click Browse or Choose File, then navigate to and open the java-tomcat-v3.zip file that you just downloaded to deploy it. It will take about two minutes for Elastic Beanstalk to update your environment and deploy the application. Ignore any warnings that may pop-up at this time. 
+
+Once the deployment is complete, go back to the browser tab that displayed the 404 status to refresh that page.
+
+The web application that you deployed is now displayed.
+
 <p align="center"> <img width="600" height="300" src="AWS Elastic Beanstock 1.png"> </p>
 
+Going back to the Elastic Beanstalk console, click Configuration. Keep a close eye on the details. In the Instances row, it indicates the instance type, monitoring interval, and security group details of any EC2 instances that are hosting your web application.
+
+Go to the bottom of the page to the Database row. It should not have any details since the environment does not include a database.
+
+In the Database row, click Modify. Next, click Monitoring. Browse through the charts to see the available information. 
+
 - Explore the AWS Resources that Support your Application
+
+In the Services menu, choose EC2. Next, click Instances. Note the number of instances are running. Those instances should support your web application. 
+
+If you want to continue exploring the Amazon EC2 service resources that were created by Elastic Beanstalk, feel free to explore them. You will find a security group with port 80 open, load balancer that both instances belong to and an auto scaling group that runs from two to six instances, depending on the network load. 
 
 <p align="center"> <img width="600" height="300" src="AWS Elastic Beanstock 2.png"> </p>
 
