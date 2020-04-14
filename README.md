@@ -14,7 +14,7 @@ Elastic Beanstalk's best advantage is that a user only pays for the AWS resource
 - Access the Elastic Beanstalk Environment
 
 ***Base Setup***
-<p align="center"> <img width="600" height="300" src="AWS EB Diagram.png"> </p>
+<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstalk.png"> </p>
 
 - Deploy a Sample Application to Elastic Beanstalk
 
