@@ -18,11 +18,11 @@ Elastic Beanstalk's best advantage is that a user only pays for the AWS resource
 
 - Deploy a Sample Application to Elastic Beanstalk
 
-<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstalk 1.png"> </p>
+<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstock 1.png"> </p>
 
 - Explore the AWS Resources that Support your Application
 
-<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstalk 2.png"> </p>
+<p align="center"> <img width="600" height="300" src="AWS Elastic Beanstock 2.png"> </p>
 
 # Blog 9 - April 10, 2020
 ## AWS : How to Build and Interact with a Relational Database Service
