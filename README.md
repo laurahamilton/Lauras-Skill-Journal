@@ -25,13 +25,13 @@ The default AWS Region and Availability Zone is Oregon US-West-2. Select another
 2. You can select, create, or upload the key pair you would like to use to SSH into your instance. (Change SSH Key Pair)
 3. You can automatically create a backup image of your instance and attached disks on a daily schedule. (Enable Automatic Snapshots)
 
-<p align="center"> <img width="600" height="300" src="launch script  ssh key.png"> </p>
+<p align="center"> <img width="700" height="400" src="launch script  ssh key.png"> </p>
 
-<p align="center"> <img width="400" height="200" src="enable automatic snapshots.png"> </p>
+<p align="center"> <img width="500" height="200" src="enable automatic snapshots.png"> </p>
 
 Next, you will choose your instance plan. You can try the $3.50 USD Lightsail plan free for one month (up to 750 hours). It has credit for one free month.
 
-<p align="center"> <img width="700" height="300" src="instance plan.png"> </p>
+<p align="center"> <img width="600" height="300" src="instance plan.png"> </p>
 
 After that, enter a name for your instance. It would also be wise to add tags to your instance with one of the following options:
 
