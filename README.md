@@ -1,5 +1,14 @@
+# Blog 11 - April 24, 2020
+## AWS : Set in Motion a Linux Vritual Machine with Amazon Lightsail
+
+<p align="center"> <img width="600" height="300" src="aws lightsail.png"> </p>
+
+On AWS, Lightsail offers virtual servers, storage, databases and networking, plus a cost-effective, monthly plan. It is very user-friendly to new users, allowing customization and scalability.
+
+We wil create an AWS Linux instance in Lightsail instantaneously. Once the instance is up and running, we will connect to it via SSH within the Lightsail console using the browser-based SSH terminal.
+
 # Blog 10 - April 17, 2020
-## AWS : Deploy a Sample Application to Elastic Beanstalk 
+## AWS : Deploy a Sample Application with Elastic Beanstalk 
 
 <p align="center"> <img width="600" height="300" src="AWS Elastic Beanstalk.png"> </p>
 
