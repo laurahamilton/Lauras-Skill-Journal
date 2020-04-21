@@ -8,10 +8,17 @@ On AWS, Lightsail offers virtual servers, storage, databases and networking, plu
 We wil create an AWS Linux instance in Lightsail instantaneously. Once the instance is up and running, we will connect to it via SSH within the Lightsail console using the browser-based SSH terminal.
 
 - Create an AWS Linux Instance in Lightsail 
+
+Go to Management Console from the Services menu and choose Lightsail. Choose Create Instance in the Instances tab of the Lightsail home page.
+
 - Configure your AWS Lightsail Instance
+
 - Connect your instance
+
 - Create a Static IP Address
+
 - Create a Snapshot of your Instance
+
 - Attach a Disk to You Instance
 
 # Blog 10 - April 17, 2020
