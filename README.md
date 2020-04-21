@@ -11,15 +11,43 @@ We wil create an AWS Linux instance in Lightsail instantaneously. Once the insta
 
 Go to Management Console from the Services menu and choose Lightsail. Choose Create Instance in the Instances tab of the Lightsail home page.
 
+<p align="center"> <img width="600" height="300" src="lightsail startup page.png"> </p>
+
 - Configure your AWS Lightsail Instance
 
-- Connect your instance
+The default AWS Region and Availability Zone is Oregon US-West-2. Select another region and availability zone if you wish to change it. Next, choose the Linux/Unix platform option, and choose OS only to view the operating system-only instance images available in Lightsail. After that, choose the Amazon Linux blueprint option.
 
-- Create a Static IP Address
+<p align="center"> <img width="600" height="300" src="instance setup.png"> </p>
 
-- Create a Snapshot of your Instance
+***Optional Configurations***
 
-- Attach a Disk to You Instance
+1. You can chooose to add a shell script that will run on the instance when it launches. (Add Launch Script)
+2. You can select, create, or upload the key pair you would like to use to SSH into your instance. (Change SSH Key Pair)
+3. You can automatically create a backup image of your instance and attached disks on a daily schedule. (Enable Automatic Snapshots)
+
+<p align="center"> <img width="600" height="300" src="launch script ssh key.png"> </p>
+
+<p align="center"> <img width="600" height="300" src="enable automatic snapshots.png"> </p>
+
+Next, you will choose your instance plan. You can try the $3.50 USD Lightsail plan free for one month (up to 750 hours). It has credit for one free month.
+
+<p align="center"> <img width="600" height="300" src="instance plan.png"> </p>
+
+After that, enter a name for your instance. It would also be wise to add tags to your instance with one of the following options:
+
+1. Add key-only tags: Type your new tag into the tag key text box, then press Enter when finished. Select Save when you are done entering all of your tags, or choose Cancel to not add all of them.
+
+2. Create a key-value tag: Type a key into the Key text box, and a value into the Value text box. Select Save when you are done entering all of your tags, or choose Cancel to not add all of them. Remember that key-value tags are only added one at a time before saving. To add more than one key-value tag, you have to repeat the first steps.
+
+<p align="center"> <img width="600" height="300" src="identify your instance.png"> </p>
+
+Finally, select Create Instance. In a few minutes, your Amazon Linux instance is will be ready, and you can connect to it using the browser-based SSH terminal in the Lightsail console.
+
+- Connect to your Instance
+
+The last step is to connect to your instance using the browser-based SSH terminal in Lightsail. Go to the Instances tab of the Lightsail home page and choose the terminal icon, or the ellipsis icon, next to the new Linux instance. The browser-based SSH terminal window should appear. You can type Linux commands into the browser terminal to start and manage your instance without configuring an SSH client.
+
+<p align="center"> <img width="600" height="300" src="connect instance.png"> </p>
 
 # Blog 10 - April 17, 2020
 ## AWS : Deploy a Sample Application with Elastic Beanstalk 
