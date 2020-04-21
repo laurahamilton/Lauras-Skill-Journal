@@ -1,7 +1,7 @@
 # Blog 11 - April 24, 2020
 ## AWS : Set in Motion a Linux Vritual Machine with Amazon Lightsail
 
-<p align="center"> <img width="600" height="300" src="aws lightsail.png"> </p>
+<p align="center"> <img width="400" height="200" src="aws lightsail.png"> </p>
 
 On AWS, Lightsail offers virtual servers, storage, databases and networking, plus a cost-effective, monthly plan. It is very user-friendly to new users, allowing customization and scalability.
 
