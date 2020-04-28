@@ -15,7 +15,7 @@ Before creating an alarm for estimated charges, we need to enable billing alerts
 
 After billing alerts are enabled for the first time, it will take about 15 minutes for billing data to be visable. Then, we can set billing alarms.
 
-<p align="center"> <img width="500" height="300" src="billing and cost management dashboard.png"> </p>
+<p align="center"> <img width="600" height="300" src="billing and cost management dashboard.png"> </p>
 
 To enable monitoring of our estimated charges, open the Billing and Cost Management console. In the navigation pane, choose Preferences and select Receive Billing Alerts. Then, select Save Preferences.
 
@@ -23,7 +23,7 @@ To enable monitoring of our estimated charges, open the Billing and Cost Managem
 
 One the billing alerts are enabled, you can create a billing alarm. For this example, we will create an alarm that sends an email message when estimated charges for AWS exceed a specified threshold. This example will use simple options.
 
-<p align="center"> <img width="500" height="300" src="aws cloudwatch overview.png"> </p>
+<p align="center"> <img width="600" height="300" src="aws cloudwatch overview.png"> </p>
 
 ***Note: You might want to change the region to US East (N. Virginia) since billing metric data is stored in this region and reflects worldwide charges.***
 
@@ -33,7 +33,7 @@ Now, specify the monetary amount to trigger the alarm and send an email notifica
 
 - Check the Alarm Status
 
-<p align="center"> <img width="700" height="300" src="aws cloudwatch alarms.png"> </p>
+<p align="center"> <img width="800" height="300" src="aws cloudwatch alarms.png"> </p>
 
 Now, lets check the status of the billing alarm just created. First, open the CloudWatch console. Go to the navigation pane and choose Alarms to select the check box next to the alarm. Until the subscription is confirmed, it is shown as "Pending confirmation". Once the subscription is confirmed, refresh the console to show the updated status.
 
