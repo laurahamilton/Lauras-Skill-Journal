@@ -5,6 +5,8 @@
 
 On AWS, CloudWatch is a monitoring and observability service. CloudWatch provides users with data insights to monitor applications, respond to system-wide performance changes, optimize resource utilization, and provide a screenshot of the infrastructure's operational health. Monitoring and operational data is collected in the form of logs, metrics, and events, providing users with a unified view of AWS resources, applications, and services that run on AWS on-premise servers. CloudWatch detects odd behavior in any environment, sets alarms, visualizes logs and metrics together, takes automated actions, troubleshoots issues, and provides tips to keep applications functional.
 
+***AWS CloudWatch Services in a Nutshell:***
+
 <p align="center"> <img width="800" height="300" src="aws cloudwatch application and infrastructure monitoring.png"> </p>
 
 ***Note: You must be either an AWS root user or IAM user with access to the Billing and Cost Management console to do this.***
@@ -27,7 +29,7 @@ One the billing alerts are enabled, you can create a billing alarm. For this exa
 
 ***Note: You might want to change the region to US East (N. Virginia) since billing metric data is stored in this region and reflects worldwide charges.***
 
-First, open the CloudWatch console. In the navigation pane, choose Alarms to create an Alarm. Next, select Metric, Billing, Total Estimated Charge. Make sure to choose the checkbox next to EstimatedCharges.
+First, open the CloudWatch console. In the navigation pane, choose Alarms. Next, select 'Metric, Billing, Total Estimated Charge'. Make sure to choose the checkbox next to Estimated Charges.
 
 Now, specify the monetary amount to trigger the alarm and send an email notification whenever the total charges for the month exceed. Choose either an existing notification list or create a new one. If you want to create a list, choose New list and type a comma-separated list of email addresses to be notified when the alarm changes to the 'ALARM' state. Each email address is sent a subscription confirmation email that the recipient must confirm before notifications can be sent to his or her email address. Finally, select Create Alarm.
 
