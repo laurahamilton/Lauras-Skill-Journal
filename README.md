@@ -1,5 +1,31 @@
+# Blog 12 - May 1, 2020
+## AWS : Monitor Estimated Charges Using CloudWatch
+
+<p align="center"> <img width="500" height="300" src="aws cloudwatch.png"> </p>
+
+On AWS, CloudWatch is a monitoring and observability service. CloudWatch provides users with data insights to monitor applications, respond to system-wide performance changes, optimize resource utilization, and provide a screenshot of the infrastructure's operational health. Monitoring and operational data is collected in the form of logs, metrics, and events, providing users with a unified view of AWS resources, applications, and services that run on AWS on-premise servers. CloudWatch detects odd behavior in any environment, sets alarms, visualizes logs and metrics together, takes automated actions, troubleshoots issues, and provides tips to keep applications functional.
+
+<p align="center"> <img width="500" height="300" src="aws cloudwatch application and infrastructure monitoring.png"> </p>
+
+***Note: You must be either an AWS root user or IAM user with access to the Billing and Cost Management console to do this.***
+
+- Enable Billing Alerts
+
+Before creating an alarm for estimated charges, we need to enable billing alerts. This will allow us to monitor estimated AWS charges and create an alarm using billing metric data. One we enable enable billing alerts, data collection cannot be disabled. However, it is possible to delete any billing alarms created earlier.
+
+After billing alerts are enabled for the first time, it will take about 15 minutes for billing data to be visable. Then, we can set billing alarms.
+
+<p align="center"> <img width="500" height="300" src="billing and cost management dashboard.png"> </p>
+
+To enable monitoring of our estimated charges, open the Billing and Cost Management console. In the navigation pane, choose Preferences and select Receive Billing Alerts. Then, select Save Preferences.
+
+- Create a Billing Alarm
+- Check the Alarm Status
+- Edit a Billing Alarm
+- Delete a Billing Alarm
+
 # Blog 11 - April 24, 2020
-## AWS : Set in Motion a Linux Vritual Machine with Amazon Lightsail
+## AWS : Set in Motion a Linux Virtual Machine with Amazon Lightsail
 
 <p align="center"> <img width="400" height="200" src="aws lightsail.png"> </p>
 
