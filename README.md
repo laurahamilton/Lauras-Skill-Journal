@@ -5,7 +5,7 @@
 
 On AWS, CloudWatch is a monitoring and observability service. CloudWatch provides users with data insights to monitor applications, respond to system-wide performance changes, optimize resource utilization, and provide a screenshot of the infrastructure's operational health. Monitoring and operational data is collected in the form of logs, metrics, and events, providing users with a unified view of AWS resources, applications, and services that run on AWS on-premise servers. CloudWatch detects odd behavior in any environment, sets alarms, visualizes logs and metrics together, takes automated actions, troubleshoots issues, and provides tips to keep applications functional.
 
-<p align="center"> <img width="500" height="300" src="aws cloudwatch application and infrastructure monitoring.png"> </p>
+<p align="center"> <img width="800" height="300" src="aws cloudwatch application and infrastructure monitoring.png"> </p>
 
 ***Note: You must be either an AWS root user or IAM user with access to the Billing and Cost Management console to do this.***
 
