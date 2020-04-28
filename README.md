@@ -33,13 +33,13 @@ Now, specify the monetary amount to trigger the alarm and send an email notifica
 
 - Check the Alarm Status
 
-<p align="center"> <img width="500" height="300" src="aws cloudwatch alarms.png"> </p>
+<p align="center"> <img width="700" height="300" src="aws cloudwatch alarms.png"> </p>
 
 Now, lets check the status of the billing alarm just created. First, open the CloudWatch console. Go to the navigation pane and choose Alarms to select the check box next to the alarm. Until the subscription is confirmed, it is shown as "Pending confirmation". Once the subscription is confirmed, refresh the console to show the updated status.
 
 - Edit a Billing Alarm
 
-<p align="center"> <img width="500" height="300" src="money symbol.jpg"> </p>
+<p align="center"> <img width="300" height="300" src="money symbol.jpg"> </p>
 
 Let's say you want to increase the amount of money you spend with AWS each month from $200 to $600. This is possible by modifying the existing billing alarm and increasing the monetary amount that must be exceeded before the alarm is triggered.
 
@@ -47,14 +47,14 @@ First, open the CloudWatch console. Go to the navigation pane and choose Alarms 
 
 - Delete a Billing Alarm
 
-<p align="center"> <img width="500" height="300" src="delete symbol.jpg"> </p>
+<p align="center"> <img width="300" height="300" src="delete symbol.jpg"> </p>
 
 Finally, when you no longer need your billing alarm, you can delete it. First, open the CloudWatch console and in the navigation pane, choose Alarms. Next, select the check box next to the alarm and choose Actions, Delete. Confirm Yes, Delete.
 
 # Blog 11 - April 24, 2020
 ## AWS : Set in Motion a Linux Virtual Machine with Amazon Lightsail
 
-<p align="center"> <img width="400" height="200" src="aws lightsail.png"> </p>
+<p align="center"> <img width="500" height="300" src="aws lightsail.png"> </p>
 
 On AWS, Lightsail offers virtual servers, storage, databases and networking, plus a cost-effective, monthly plan. It is very user-friendly to new users, allowing customization and scalability.
 
